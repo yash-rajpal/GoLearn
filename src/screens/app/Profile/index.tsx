@@ -8,7 +8,6 @@ import {
   Image,
   Linking,
 } from 'react-native';
-import auth from '@react-native-firebase/auth';
 import MaterialCommunityIconsI from 'react-native-vector-icons/MaterialCommunityIcons';
 import {themes} from '../../../constants/colors';
 import {styles, settingRowStyles} from './styles';
@@ -127,9 +126,7 @@ const Profile = ({navigation}) => {
       <TouchableOpacity
         style={settingRowStyles.mainContainer}
         onPress={() => {
-          auth()
-            .signOut()
-            .then(() => console.log('User signed out!'));
+          console.log("Sign Out")
         }}>
         <View style={{flexDirection: 'row'}}>
           <MaterialCommunityIconsI

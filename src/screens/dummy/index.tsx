@@ -23,7 +23,6 @@ export default Dummy;
 //   Image,
 //   FlatList,
 // } from 'react-native';
-// import auth from '@react-native-firebase/auth';
 // import MaterialCommunityIconsI from 'react-native-vector-icons/MaterialCommunityIcons';
 // import {themes} from '../../../constants/colors';
 // import {styles, settingRowStyles} from './styles';

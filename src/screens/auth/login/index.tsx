@@ -63,7 +63,6 @@ const _onChange = (
 
 const Login = ({
   setRoute,
-  signInWithPhoneNumber,
 }: {
   setRoute: React.Dispatch<React.SetStateAction<keyof Routes>>;
 }) => {
@@ -198,7 +197,6 @@ const Login = ({
             : {...styles.getOTP, backgroundColor: themes['light'].buttons}
         }
         onPress={() => {
-          signInWithPhoneNumber(mobileNum);
           setRoute('Verification');
         }}
         disabled={!isMobileValid}>
