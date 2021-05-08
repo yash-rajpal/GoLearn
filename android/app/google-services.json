@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "787690696994",
+    "project_id": "solvio-305805",
+    "storage_bucket": "solvio-305805.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:787690696994:android:9c8bf1ba741828c78fb57b",
+        "android_client_info": {
+          "package_name": "com.selfy"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "787690696994-qv45pu1a0pvofj9qp0rc0keq613llu32.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.selfy",
+            "certificate_hash": "5e8f16062ea3cd2c4a0d547876baa6f38cabf625"
+          }
+        },
+        {
+          "client_id": "787690696994-o36g994g0vju4mgorr135gneacmksffr.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDhsKFkenbWns2J5DE1sQxEzccsXcmVZ8c"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "787690696994-o36g994g0vju4mgorr135gneacmksffr.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

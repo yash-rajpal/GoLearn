@@ -1,0 +1,19 @@
+name: iOS
+on: [pull_request]
+jobs:
+  build:
+    runs-on: macos-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: Use Node.js 12
+      uses: actions/setup-node@v1
+      with:
+        node-version: 12.x
+    - name: Install dep
+      run: yarn
+    - run: xcode-select -p
+    - run: npx pod install
+      working-directory: ios
+      name: Install pod dependencies
+    - name: Build iOS Debug
+      run: "xcodebuild -workspace Selfy.xcworkspace -configuration Debug -scheme Selfy -destination id=B62C3F8D-7B50-43C2-802A-900B180ED435"
