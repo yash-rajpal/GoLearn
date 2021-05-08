@@ -7,16 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		00E356F31AD99517003FC87E /* SelfyTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* SelfyTests.m */; };
+		00E356F31AD99517003FC87E /* GoLearnTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* GoLearnTests.m */; };
 		13B07FBC1A68108700A75B9A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.m */; };
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
-		157A045BF81BA11DE8B2AE2E /* libPods-Selfy-tvOSTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E6C472F01D5280FB103205C6 /* libPods-Selfy-tvOSTests.a */; };
+		157A045BF81BA11DE8B2AE2E /* libPods-GoLearn-tvOSTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E6C472F01D5280FB103205C6 /* libPods-GoLearn-tvOSTests.a */; };
 		2D02E4BC1E0B4A80006451C7 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.m */; };
 		2D02E4BD1E0B4A84006451C7 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		2D02E4BF1E0B4AB3006451C7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
-		2DCD954D1E0B4F2C00145EB5 /* SelfyTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* SelfyTests.m */; };
-		310DD07367061F4574354AC1 /* libPods-Selfy-tvOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BFE6EB64D38F4849BD5F3D7E /* libPods-Selfy-tvOS.a */; };
+		2DCD954D1E0B4F2C00145EB5 /* GoLearnTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* GoLearnTests.m */; };
+		310DD07367061F4574354AC1 /* libPods-GoLearn-tvOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BFE6EB64D38F4849BD5F3D7E /* libPods-GoLearn-tvOS.a */; };
 		48E6647525DF7E1C006CA546 /* Nunito-ExtraBoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 48E6646725DF7E1B006CA546 /* Nunito-ExtraBoldItalic.ttf */; };
 		48E6647625DF7E1C006CA546 /* Nunito-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 48E6646825DF7E1B006CA546 /* Nunito-ExtraBold.ttf */; };
 		48E6647725DF7E1C006CA546 /* Nunito-ExtraLightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 48E6646925DF7E1B006CA546 /* Nunito-ExtraLightItalic.ttf */; };
@@ -32,8 +32,8 @@
 		48E6648125DF7E1C006CA546 /* Nunito-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 48E6647325DF7E1B006CA546 /* Nunito-Italic.ttf */; };
 		48E6648225DF7E1C006CA546 /* Nunito-LightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 48E6647425DF7E1B006CA546 /* Nunito-LightItalic.ttf */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
-		A6B88B9F4C7712638CEF1642 /* libPods-Selfy.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FBEE206CE9814E2BBD640931 /* libPods-Selfy.a */; };
-		BE910BEB271740AAF03FD9B3 /* libPods-Selfy-SelfyTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F842AF07E594DBC0B5E34DDF /* libPods-Selfy-SelfyTests.a */; };
+		A6B88B9F4C7712638CEF1642 /* libPods-GoLearn.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FBEE206CE9814E2BBD640931 /* libPods-GoLearn.a */; };
+		BE910BEB271740AAF03FD9B3 /* libPods-GoLearn-GoLearnTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F842AF07E594DBC0B5E34DDF /* libPods-GoLearn-GoLearnTests.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,32 +42,32 @@
 			containerPortal = 83CBB9F71A601CBA00E9B192 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 13B07F861A680F5B00A75B9A;
-			remoteInfo = Selfy;
+			remoteInfo = GoLearn;
 		};
 		2D02E4911E0B4A5D006451C7 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 83CBB9F71A601CBA00E9B192 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 2D02E47A1E0B4A5D006451C7;
-			remoteInfo = "Selfy-tvOS";
+			remoteInfo = "GoLearn-tvOS";
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		008F07F21AC5B25A0029DE68 /* main.jsbundle */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = main.jsbundle; sourceTree = "<group>"; };
-		00E356EE1AD99517003FC87E /* SelfyTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SelfyTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		00E356EE1AD99517003FC87E /* GoLearnTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GoLearnTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		00E356F11AD99517003FC87E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		00E356F21AD99517003FC87E /* SelfyTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SelfyTests.m; sourceTree = "<group>"; };
-		028CC811CC27A7C5B8F73BBD /* Pods-Selfy.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Selfy.release.xcconfig"; path = "Target Support Files/Pods-Selfy/Pods-Selfy.release.xcconfig"; sourceTree = "<group>"; };
-		13B07F961A680F5B00A75B9A /* Selfy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Selfy.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		13B07FAF1A68108700A75B9A /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = Selfy/AppDelegate.h; sourceTree = "<group>"; };
-		13B07FB01A68108700A75B9A /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = Selfy/AppDelegate.m; sourceTree = "<group>"; };
-		13B07FB51A68108700A75B9A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = Selfy/Images.xcassets; sourceTree = "<group>"; };
-		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = Selfy/Info.plist; sourceTree = "<group>"; };
-		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = Selfy/main.m; sourceTree = "<group>"; };
-		2D02E47B1E0B4A5D006451C7 /* Selfy-tvOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Selfy-tvOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		2D02E4901E0B4A5D006451C7 /* Selfy-tvOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Selfy-tvOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		2FB9DEA0C5447D4F0C4A4DFC /* Pods-Selfy-SelfyTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Selfy-SelfyTests.debug.xcconfig"; path = "Target Support Files/Pods-Selfy-SelfyTests/Pods-Selfy-SelfyTests.debug.xcconfig"; sourceTree = "<group>"; };
+		00E356F21AD99517003FC87E /* GoLearnTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GoLearnTests.m; sourceTree = "<group>"; };
+		028CC811CC27A7C5B8F73BBD /* Pods-GoLearn.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GoLearn.release.xcconfig"; path = "Target Support Files/Pods-GoLearn/Pods-GoLearn.release.xcconfig"; sourceTree = "<group>"; };
+		13B07F961A680F5B00A75B9A /* GoLearn.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GoLearn.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		13B07FAF1A68108700A75B9A /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = GoLearn/AppDelegate.h; sourceTree = "<group>"; };
+		13B07FB01A68108700A75B9A /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = GoLearn/AppDelegate.m; sourceTree = "<group>"; };
+		13B07FB51A68108700A75B9A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = GoLearn/Images.xcassets; sourceTree = "<group>"; };
+		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = GoLearn/Info.plist; sourceTree = "<group>"; };
+		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = GoLearn/main.m; sourceTree = "<group>"; };
+		2D02E47B1E0B4A5D006451C7 /* GoLearn-tvOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "GoLearn-tvOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		2D02E4901E0B4A5D006451C7 /* GoLearn-tvOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "GoLearn-tvOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		2FB9DEA0C5447D4F0C4A4DFC /* Pods-GoLearn-GoLearnTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GoLearn-GoLearnTests.debug.xcconfig"; path = "Target Support Files/Pods-GoLearn-GoLearnTests/Pods-GoLearn-GoLearnTests.debug.xcconfig"; sourceTree = "<group>"; };
 		48E6646725DF7E1B006CA546 /* Nunito-ExtraBoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Nunito-ExtraBoldItalic.ttf"; sourceTree = "<group>"; };
 		48E6646825DF7E1B006CA546 /* Nunito-ExtraBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Nunito-ExtraBold.ttf"; sourceTree = "<group>"; };
 		48E6646925DF7E1B006CA546 /* Nunito-ExtraLightItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Nunito-ExtraLightItalic.ttf"; sourceTree = "<group>"; };
@@ -98,19 +98,19 @@
 		48E752D425DD6AF60091D4BF /* EvilIcons.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = EvilIcons.ttf; sourceTree = "<group>"; };
 		48E752D525DD6AF60091D4BF /* SimpleLineIcons.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = SimpleLineIcons.ttf; sourceTree = "<group>"; };
 		48E752D625DD6AF60091D4BF /* MaterialIcons.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = MaterialIcons.ttf; sourceTree = "<group>"; };
-		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = Selfy/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		9DE3046866544ED520A5B7DD /* Pods-Selfy-SelfyTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Selfy-SelfyTests.release.xcconfig"; path = "Target Support Files/Pods-Selfy-SelfyTests/Pods-Selfy-SelfyTests.release.xcconfig"; sourceTree = "<group>"; };
-		A41F08690F6BE15AB46DB81E /* Pods-Selfy.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Selfy.debug.xcconfig"; path = "Target Support Files/Pods-Selfy/Pods-Selfy.debug.xcconfig"; sourceTree = "<group>"; };
-		B381AFEFF48A6BCF92E7F8C1 /* Pods-Selfy-tvOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Selfy-tvOS.debug.xcconfig"; path = "Target Support Files/Pods-Selfy-tvOS/Pods-Selfy-tvOS.debug.xcconfig"; sourceTree = "<group>"; };
-		B4E7A5B6975901E6A6F9DEFC /* Pods-Selfy-tvOSTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Selfy-tvOSTests.release.xcconfig"; path = "Target Support Files/Pods-Selfy-tvOSTests/Pods-Selfy-tvOSTests.release.xcconfig"; sourceTree = "<group>"; };
-		BFE6EB64D38F4849BD5F3D7E /* libPods-Selfy-tvOS.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Selfy-tvOS.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		C6B6AFCEB54D43A4504185ED /* Pods-Selfy-tvOSTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Selfy-tvOSTests.debug.xcconfig"; path = "Target Support Files/Pods-Selfy-tvOSTests/Pods-Selfy-tvOSTests.debug.xcconfig"; sourceTree = "<group>"; };
-		D9A649A0EDFCF48B659B8BD4 /* Pods-Selfy-tvOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Selfy-tvOS.release.xcconfig"; path = "Target Support Files/Pods-Selfy-tvOS/Pods-Selfy-tvOS.release.xcconfig"; sourceTree = "<group>"; };
-		E6C472F01D5280FB103205C6 /* libPods-Selfy-tvOSTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Selfy-tvOSTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = GoLearn/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		9DE3046866544ED520A5B7DD /* Pods-GoLearn-GoLearnTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GoLearn-GoLearnTests.release.xcconfig"; path = "Target Support Files/Pods-GoLearn-GoLearnTests/Pods-GoLearn-GoLearnTests.release.xcconfig"; sourceTree = "<group>"; };
+		A41F08690F6BE15AB46DB81E /* Pods-GoLearn.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GoLearn.debug.xcconfig"; path = "Target Support Files/Pods-GoLearn/Pods-GoLearn.debug.xcconfig"; sourceTree = "<group>"; };
+		B381AFEFF48A6BCF92E7F8C1 /* Pods-GoLearn-tvOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GoLearn-tvOS.debug.xcconfig"; path = "Target Support Files/Pods-GoLearn-tvOS/Pods-GoLearn-tvOS.debug.xcconfig"; sourceTree = "<group>"; };
+		B4E7A5B6975901E6A6F9DEFC /* Pods-GoLearn-tvOSTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GoLearn-tvOSTests.release.xcconfig"; path = "Target Support Files/Pods-GoLearn-tvOSTests/Pods-GoLearn-tvOSTests.release.xcconfig"; sourceTree = "<group>"; };
+		BFE6EB64D38F4849BD5F3D7E /* libPods-GoLearn-tvOS.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-GoLearn-tvOS.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C6B6AFCEB54D43A4504185ED /* Pods-GoLearn-tvOSTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GoLearn-tvOSTests.debug.xcconfig"; path = "Target Support Files/Pods-GoLearn-tvOSTests/Pods-GoLearn-tvOSTests.debug.xcconfig"; sourceTree = "<group>"; };
+		D9A649A0EDFCF48B659B8BD4 /* Pods-GoLearn-tvOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GoLearn-tvOS.release.xcconfig"; path = "Target Support Files/Pods-GoLearn-tvOS/Pods-GoLearn-tvOS.release.xcconfig"; sourceTree = "<group>"; };
+		E6C472F01D5280FB103205C6 /* libPods-GoLearn-tvOSTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-GoLearn-tvOSTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 		ED2971642150620600B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = Platforms/AppleTVOS.platform/Developer/SDKs/AppleTVOS12.0.sdk/System/Library/Frameworks/JavaScriptCore.framework; sourceTree = DEVELOPER_DIR; };
-		F842AF07E594DBC0B5E34DDF /* libPods-Selfy-SelfyTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Selfy-SelfyTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		FBEE206CE9814E2BBD640931 /* libPods-Selfy.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Selfy.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		F842AF07E594DBC0B5E34DDF /* libPods-GoLearn-GoLearnTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-GoLearn-GoLearnTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		FBEE206CE9814E2BBD640931 /* libPods-GoLearn.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-GoLearn.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -118,7 +118,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BE910BEB271740AAF03FD9B3 /* libPods-Selfy-SelfyTests.a in Frameworks */,
+				BE910BEB271740AAF03FD9B3 /* libPods-GoLearn-GoLearnTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -126,7 +126,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A6B88B9F4C7712638CEF1642 /* libPods-Selfy.a in Frameworks */,
+				A6B88B9F4C7712638CEF1642 /* libPods-GoLearn.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -134,7 +134,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				310DD07367061F4574354AC1 /* libPods-Selfy-tvOS.a in Frameworks */,
+				310DD07367061F4574354AC1 /* libPods-GoLearn-tvOS.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -142,20 +142,20 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				157A045BF81BA11DE8B2AE2E /* libPods-Selfy-tvOSTests.a in Frameworks */,
+				157A045BF81BA11DE8B2AE2E /* libPods-GoLearn-tvOSTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		00E356EF1AD99517003FC87E /* SelfyTests */ = {
+		00E356EF1AD99517003FC87E /* GoLearnTests */ = {
 			isa = PBXGroup;
 			children = (
-				00E356F21AD99517003FC87E /* SelfyTests.m */,
+				00E356F21AD99517003FC87E /* GoLearnTests.m */,
 				00E356F01AD99517003FC87E /* Supporting Files */,
 			);
-			path = SelfyTests;
+			path = GoLearnTests;
 			sourceTree = "<group>";
 		};
 		00E356F01AD99517003FC87E /* Supporting Files */ = {
@@ -169,19 +169,19 @@
 		03FB46466856377B87599790 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				A41F08690F6BE15AB46DB81E /* Pods-Selfy.debug.xcconfig */,
-				028CC811CC27A7C5B8F73BBD /* Pods-Selfy.release.xcconfig */,
-				2FB9DEA0C5447D4F0C4A4DFC /* Pods-Selfy-SelfyTests.debug.xcconfig */,
-				9DE3046866544ED520A5B7DD /* Pods-Selfy-SelfyTests.release.xcconfig */,
-				B381AFEFF48A6BCF92E7F8C1 /* Pods-Selfy-tvOS.debug.xcconfig */,
-				D9A649A0EDFCF48B659B8BD4 /* Pods-Selfy-tvOS.release.xcconfig */,
-				C6B6AFCEB54D43A4504185ED /* Pods-Selfy-tvOSTests.debug.xcconfig */,
-				B4E7A5B6975901E6A6F9DEFC /* Pods-Selfy-tvOSTests.release.xcconfig */,
+				A41F08690F6BE15AB46DB81E /* Pods-GoLearn.debug.xcconfig */,
+				028CC811CC27A7C5B8F73BBD /* Pods-GoLearn.release.xcconfig */,
+				2FB9DEA0C5447D4F0C4A4DFC /* Pods-GoLearn-GoLearnTests.debug.xcconfig */,
+				9DE3046866544ED520A5B7DD /* Pods-GoLearn-GoLearnTests.release.xcconfig */,
+				B381AFEFF48A6BCF92E7F8C1 /* Pods-GoLearn-tvOS.debug.xcconfig */,
+				D9A649A0EDFCF48B659B8BD4 /* Pods-GoLearn-tvOS.release.xcconfig */,
+				C6B6AFCEB54D43A4504185ED /* Pods-GoLearn-tvOSTests.debug.xcconfig */,
+				B4E7A5B6975901E6A6F9DEFC /* Pods-GoLearn-tvOSTests.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
 		};
-		13B07FAE1A68108700A75B9A /* Selfy */ = {
+		13B07FAE1A68108700A75B9A /* GoLearn */ = {
 			isa = PBXGroup;
 			children = (
 				008F07F21AC5B25A0029DE68 /* main.jsbundle */,
@@ -192,7 +192,7 @@
 				81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */,
 				13B07FB71A68108700A75B9A /* main.m */,
 			);
-			name = Selfy;
+			name = GoLearn;
 			sourceTree = "<group>";
 		};
 		2D16E6871FA4F8E400B85C8A /* Frameworks */ = {
@@ -200,10 +200,10 @@
 			children = (
 				ED297162215061F000B7C4FE /* JavaScriptCore.framework */,
 				ED2971642150620600B7C4FE /* JavaScriptCore.framework */,
-				FBEE206CE9814E2BBD640931 /* libPods-Selfy.a */,
-				F842AF07E594DBC0B5E34DDF /* libPods-Selfy-SelfyTests.a */,
-				BFE6EB64D38F4849BD5F3D7E /* libPods-Selfy-tvOS.a */,
-				E6C472F01D5280FB103205C6 /* libPods-Selfy-tvOSTests.a */,
+				FBEE206CE9814E2BBD640931 /* libPods-GoLearn.a */,
+				F842AF07E594DBC0B5E34DDF /* libPods-GoLearn-GoLearnTests.a */,
+				BFE6EB64D38F4849BD5F3D7E /* libPods-GoLearn-tvOS.a */,
+				E6C472F01D5280FB103205C6 /* libPods-GoLearn-tvOSTests.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -266,9 +266,9 @@
 			children = (
 				48E6646625DF7E1B006CA546 /* fonts */,
 				48E752C625DD6AF60091D4BF /* Fonts */,
-				13B07FAE1A68108700A75B9A /* Selfy */,
+				13B07FAE1A68108700A75B9A /* GoLearn */,
 				832341AE1AAA6A7D00B99B32 /* Libraries */,
-				00E356EF1AD99517003FC87E /* SelfyTests */,
+				00E356EF1AD99517003FC87E /* GoLearnTests */,
 				83CBBA001A601CBA00E9B192 /* Products */,
 				2D16E6871FA4F8E400B85C8A /* Frameworks */,
 				03FB46466856377B87599790 /* Pods */,
@@ -281,10 +281,10 @@
 		83CBBA001A601CBA00E9B192 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				13B07F961A680F5B00A75B9A /* Selfy.app */,
-				00E356EE1AD99517003FC87E /* SelfyTests.xctest */,
-				2D02E47B1E0B4A5D006451C7 /* Selfy-tvOS.app */,
-				2D02E4901E0B4A5D006451C7 /* Selfy-tvOSTests.xctest */,
+				13B07F961A680F5B00A75B9A /* GoLearn.app */,
+				00E356EE1AD99517003FC87E /* GoLearnTests.xctest */,
+				2D02E47B1E0B4A5D006451C7 /* GoLearn-tvOS.app */,
+				2D02E4901E0B4A5D006451C7 /* GoLearn-tvOSTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -292,9 +292,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		00E356ED1AD99517003FC87E /* SelfyTests */ = {
+		00E356ED1AD99517003FC87E /* GoLearnTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 00E357021AD99517003FC87E /* Build configuration list for PBXNativeTarget "SelfyTests" */;
+			buildConfigurationList = 00E357021AD99517003FC87E /* Build configuration list for PBXNativeTarget "GoLearnTests" */;
 			buildPhases = (
 				8F7D3801A6300CDCE2ECF079 /* [CP] Check Pods Manifest.lock */,
 				00E356EA1AD99517003FC87E /* Sources */,
@@ -307,14 +307,14 @@
 			dependencies = (
 				00E356F51AD99517003FC87E /* PBXTargetDependency */,
 			);
-			name = SelfyTests;
-			productName = SelfyTests;
-			productReference = 00E356EE1AD99517003FC87E /* SelfyTests.xctest */;
+			name = GoLearnTests;
+			productName = GoLearnTests;
+			productReference = 00E356EE1AD99517003FC87E /* GoLearnTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		13B07F861A680F5B00A75B9A /* Selfy */ = {
+		13B07F861A680F5B00A75B9A /* GoLearn */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "Selfy" */;
+			buildConfigurationList = 13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "GoLearn" */;
 			buildPhases = (
 				F64D4C926CC5F69CECCEE48B /* [CP] Check Pods Manifest.lock */,
 				FD10A7F022414F080027D42C /* Start Packager */,
@@ -328,14 +328,14 @@
 			);
 			dependencies = (
 			);
-			name = Selfy;
-			productName = Selfy;
-			productReference = 13B07F961A680F5B00A75B9A /* Selfy.app */;
+			name = GoLearn;
+			productName = GoLearn;
+			productReference = 13B07F961A680F5B00A75B9A /* GoLearn.app */;
 			productType = "com.apple.product-type.application";
 		};
-		2D02E47A1E0B4A5D006451C7 /* Selfy-tvOS */ = {
+		2D02E47A1E0B4A5D006451C7 /* GoLearn-tvOS */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 2D02E4BA1E0B4A5E006451C7 /* Build configuration list for PBXNativeTarget "Selfy-tvOS" */;
+			buildConfigurationList = 2D02E4BA1E0B4A5E006451C7 /* Build configuration list for PBXNativeTarget "GoLearn-tvOS" */;
 			buildPhases = (
 				BCDE2789F57F8ED7B8CB7900 /* [CP] Check Pods Manifest.lock */,
 				FD10A7F122414F3F0027D42C /* Start Packager */,
@@ -348,14 +348,14 @@
 			);
 			dependencies = (
 			);
-			name = "Selfy-tvOS";
-			productName = "Selfy-tvOS";
-			productReference = 2D02E47B1E0B4A5D006451C7 /* Selfy-tvOS.app */;
+			name = "GoLearn-tvOS";
+			productName = "GoLearn-tvOS";
+			productReference = 2D02E47B1E0B4A5D006451C7 /* GoLearn-tvOS.app */;
 			productType = "com.apple.product-type.application";
 		};
-		2D02E48F1E0B4A5D006451C7 /* Selfy-tvOSTests */ = {
+		2D02E48F1E0B4A5D006451C7 /* GoLearn-tvOSTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 2D02E4BB1E0B4A5E006451C7 /* Build configuration list for PBXNativeTarget "Selfy-tvOSTests" */;
+			buildConfigurationList = 2D02E4BB1E0B4A5E006451C7 /* Build configuration list for PBXNativeTarget "GoLearn-tvOSTests" */;
 			buildPhases = (
 				C4AB3A07AA5DC8A55737D5E6 /* [CP] Check Pods Manifest.lock */,
 				2D02E48C1E0B4A5D006451C7 /* Sources */,
@@ -367,9 +367,9 @@
 			dependencies = (
 				2D02E4921E0B4A5D006451C7 /* PBXTargetDependency */,
 			);
-			name = "Selfy-tvOSTests";
-			productName = "Selfy-tvOSTests";
-			productReference = 2D02E4901E0B4A5D006451C7 /* Selfy-tvOSTests.xctest */;
+			name = "GoLearn-tvOSTests";
+			productName = "GoLearn-tvOSTests";
+			productReference = 2D02E4901E0B4A5D006451C7 /* GoLearn-tvOSTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -398,7 +398,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 83CBB9FA1A601CBA00E9B192 /* Build configuration list for PBXProject "Selfy" */;
+			buildConfigurationList = 83CBB9FA1A601CBA00E9B192 /* Build configuration list for PBXProject "GoLearn" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -411,10 +411,10 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				13B07F861A680F5B00A75B9A /* Selfy */,
-				00E356ED1AD99517003FC87E /* SelfyTests */,
-				2D02E47A1E0B4A5D006451C7 /* Selfy-tvOS */,
-				2D02E48F1E0B4A5D006451C7 /* Selfy-tvOSTests */,
+				13B07F861A680F5B00A75B9A /* GoLearn */,
+				00E356ED1AD99517003FC87E /* GoLearnTests */,
+				2D02E47A1E0B4A5D006451C7 /* GoLearn-tvOS */,
+				2D02E48F1E0B4A5D006451C7 /* GoLearn-tvOSTests */,
 			);
 		};
 /* End PBXProject section */
@@ -488,7 +488,7 @@
 			files = (
 			);
 			inputPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Selfy/Pods-Selfy-resources.sh",
+				"${PODS_ROOT}/Target Support Files/Pods-GoLearn/Pods-GoLearn-resources.sh",
 				"${PODS_ROOT}/../../node_modules/react-native-vector-icons/Fonts/AntDesign.ttf",
 				"${PODS_ROOT}/../../node_modules/react-native-vector-icons/Fonts/Entypo.ttf",
 				"${PODS_ROOT}/../../node_modules/react-native-vector-icons/Fonts/EvilIcons.ttf",
@@ -529,7 +529,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Selfy/Pods-Selfy-resources.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-GoLearn/Pods-GoLearn-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		2D02E4CB1E0B4B27006451C7 /* Bundle React Native Code And Images */ = {
@@ -552,7 +552,7 @@
 			files = (
 			);
 			inputPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Selfy-SelfyTests/Pods-Selfy-SelfyTests-resources.sh",
+				"${PODS_ROOT}/Target Support Files/Pods-GoLearn-GoLearnTests/Pods-GoLearn-GoLearnTests-resources.sh",
 				"${PODS_ROOT}/../../node_modules/react-native-vector-icons/Fonts/AntDesign.ttf",
 				"${PODS_ROOT}/../../node_modules/react-native-vector-icons/Fonts/Entypo.ttf",
 				"${PODS_ROOT}/../../node_modules/react-native-vector-icons/Fonts/EvilIcons.ttf",
@@ -593,7 +593,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Selfy-SelfyTests/Pods-Selfy-SelfyTests-resources.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-GoLearn-GoLearnTests/Pods-GoLearn-GoLearnTests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		8F7D3801A6300CDCE2ECF079 /* [CP] Check Pods Manifest.lock */ = {
@@ -611,7 +611,7 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-Selfy-SelfyTests-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-GoLearn-GoLearnTests-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -633,7 +633,7 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-Selfy-tvOS-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-GoLearn-tvOS-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -655,7 +655,7 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-Selfy-tvOSTests-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-GoLearn-tvOSTests-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -677,7 +677,7 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-Selfy-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-GoLearn-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -729,7 +729,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				00E356F31AD99517003FC87E /* SelfyTests.m in Sources */,
+				00E356F31AD99517003FC87E /* GoLearnTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -755,7 +755,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2DCD954D1E0B4F2C00145EB5 /* SelfyTests.m in Sources */,
+				2DCD954D1E0B4F2C00145EB5 /* GoLearnTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -764,12 +764,12 @@
 /* Begin PBXTargetDependency section */
 		00E356F51AD99517003FC87E /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 13B07F861A680F5B00A75B9A /* Selfy */;
+			target = 13B07F861A680F5B00A75B9A /* GoLearn */;
 			targetProxy = 00E356F41AD99517003FC87E /* PBXContainerItemProxy */;
 		};
 		2D02E4921E0B4A5D006451C7 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 2D02E47A1E0B4A5D006451C7 /* Selfy-tvOS */;
+			target = 2D02E47A1E0B4A5D006451C7 /* GoLearn-tvOS */;
 			targetProxy = 2D02E4911E0B4A5D006451C7 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -777,14 +777,14 @@
 /* Begin XCBuildConfiguration section */
 		00E356F61AD99517003FC87E /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 2FB9DEA0C5447D4F0C4A4DFC /* Pods-Selfy-SelfyTests.debug.xcconfig */;
+			baseConfigurationReference = 2FB9DEA0C5447D4F0C4A4DFC /* Pods-GoLearn-GoLearnTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
 				);
-				INFOPLIST_FILE = SelfyTests/Info.plist;
+				INFOPLIST_FILE = GoLearnTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				OTHER_LDFLAGS = (
@@ -794,17 +794,17 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Selfy.app/Selfy";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/GoLearn.app/GoLearn";
 			};
 			name = Debug;
 		};
 		00E356F71AD99517003FC87E /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 9DE3046866544ED520A5B7DD /* Pods-Selfy-SelfyTests.release.xcconfig */;
+			baseConfigurationReference = 9DE3046866544ED520A5B7DD /* Pods-GoLearn-GoLearnTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				COPY_PHASE_STRIP = NO;
-				INFOPLIST_FILE = SelfyTests/Info.plist;
+				INFOPLIST_FILE = GoLearnTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				OTHER_LDFLAGS = (
@@ -814,19 +814,19 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Selfy.app/Selfy";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/GoLearn.app/GoLearn";
 			};
 			name = Release;
 		};
 		13B07F941A680F5B00A75B9A /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = A41F08690F6BE15AB46DB81E /* Pods-Selfy.debug.xcconfig */;
+			baseConfigurationReference = A41F08690F6BE15AB46DB81E /* Pods-GoLearn.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CURRENT_PROJECT_VERSION = 1;
 				ENABLE_BITCODE = NO;
-				INFOPLIST_FILE = Selfy/Info.plist;
+				INFOPLIST_FILE = GoLearn/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = (
 					"$(inherited)",
@@ -834,7 +834,7 @@
 					"-lc++",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
-				PRODUCT_NAME = Selfy;
+				PRODUCT_NAME = GoLearn;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -843,12 +843,12 @@
 		};
 		13B07F951A680F5B00A75B9A /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 028CC811CC27A7C5B8F73BBD /* Pods-Selfy.release.xcconfig */;
+			baseConfigurationReference = 028CC811CC27A7C5B8F73BBD /* Pods-GoLearn.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CURRENT_PROJECT_VERSION = 1;
-				INFOPLIST_FILE = Selfy/Info.plist;
+				INFOPLIST_FILE = GoLearn/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = (
 					"$(inherited)",
@@ -856,7 +856,7 @@
 					"-lc++",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
-				PRODUCT_NAME = Selfy;
+				PRODUCT_NAME = GoLearn;
 				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
 			};
@@ -864,7 +864,7 @@
 		};
 		2D02E4971E0B4A5E006451C7 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = B381AFEFF48A6BCF92E7F8C1 /* Pods-Selfy-tvOS.debug.xcconfig */;
+			baseConfigurationReference = B381AFEFF48A6BCF92E7F8C1 /* Pods-GoLearn-tvOS.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "App Icon & Top Shelf Image";
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -875,14 +875,14 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_TESTABILITY = YES;
 				GCC_NO_COMMON_BLOCKS = YES;
-				INFOPLIST_FILE = "Selfy-tvOS/Info.plist";
+				INFOPLIST_FILE = "GoLearn-tvOS/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.Selfy-tvOS";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.GoLearn-tvOS";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = appletvos;
 				TARGETED_DEVICE_FAMILY = 3;
@@ -892,7 +892,7 @@
 		};
 		2D02E4981E0B4A5E006451C7 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = D9A649A0EDFCF48B659B8BD4 /* Pods-Selfy-tvOS.release.xcconfig */;
+			baseConfigurationReference = D9A649A0EDFCF48B659B8BD4 /* Pods-GoLearn-tvOS.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "App Icon & Top Shelf Image";
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -903,14 +903,14 @@
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				GCC_NO_COMMON_BLOCKS = YES;
-				INFOPLIST_FILE = "Selfy-tvOS/Info.plist";
+				INFOPLIST_FILE = "GoLearn-tvOS/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.Selfy-tvOS";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.GoLearn-tvOS";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = appletvos;
 				TARGETED_DEVICE_FAMILY = 3;
@@ -920,7 +920,7 @@
 		};
 		2D02E4991E0B4A5E006451C7 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = C6B6AFCEB54D43A4504185ED /* Pods-Selfy-tvOSTests.debug.xcconfig */;
+			baseConfigurationReference = C6B6AFCEB54D43A4504185ED /* Pods-GoLearn-tvOSTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CLANG_ANALYZER_NONNULL = YES;
@@ -930,24 +930,24 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_TESTABILITY = YES;
 				GCC_NO_COMMON_BLOCKS = YES;
-				INFOPLIST_FILE = "Selfy-tvOSTests/Info.plist";
+				INFOPLIST_FILE = "GoLearn-tvOSTests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.Selfy-tvOSTests";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.GoLearn-tvOSTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = appletvos;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Selfy-tvOS.app/Selfy-tvOS";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/GoLearn-tvOS.app/GoLearn-tvOS";
 				TVOS_DEPLOYMENT_TARGET = 10.1;
 			};
 			name = Debug;
 		};
 		2D02E49A1E0B4A5E006451C7 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = B4E7A5B6975901E6A6F9DEFC /* Pods-Selfy-tvOSTests.release.xcconfig */;
+			baseConfigurationReference = B4E7A5B6975901E6A6F9DEFC /* Pods-GoLearn-tvOSTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CLANG_ANALYZER_NONNULL = YES;
@@ -957,17 +957,17 @@
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				GCC_NO_COMMON_BLOCKS = YES;
-				INFOPLIST_FILE = "Selfy-tvOSTests/Info.plist";
+				INFOPLIST_FILE = "GoLearn-tvOSTests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.Selfy-tvOSTests";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.GoLearn-tvOSTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = appletvos;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Selfy-tvOS.app/Selfy-tvOS";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/GoLearn-tvOS.app/GoLearn-tvOS";
 				TVOS_DEPLOYMENT_TARGET = 10.1;
 			};
 			name = Release;
@@ -1088,7 +1088,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		00E357021AD99517003FC87E /* Build configuration list for PBXNativeTarget "SelfyTests" */ = {
+		00E357021AD99517003FC87E /* Build configuration list for PBXNativeTarget "GoLearnTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				00E356F61AD99517003FC87E /* Debug */,
@@ -1097,7 +1097,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "Selfy" */ = {
+		13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "GoLearn" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				13B07F941A680F5B00A75B9A /* Debug */,
@@ -1106,7 +1106,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		2D02E4BA1E0B4A5E006451C7 /* Build configuration list for PBXNativeTarget "Selfy-tvOS" */ = {
+		2D02E4BA1E0B4A5E006451C7 /* Build configuration list for PBXNativeTarget "GoLearn-tvOS" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				2D02E4971E0B4A5E006451C7 /* Debug */,
@@ -1115,7 +1115,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		2D02E4BB1E0B4A5E006451C7 /* Build configuration list for PBXNativeTarget "Selfy-tvOSTests" */ = {
+		2D02E4BB1E0B4A5E006451C7 /* Build configuration list for PBXNativeTarget "GoLearn-tvOSTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				2D02E4991E0B4A5E006451C7 /* Debug */,
@@ -1124,7 +1124,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		83CBB9FA1A601CBA00E9B192 /* Build configuration list for PBXProject "Selfy" */ = {
+		83CBB9FA1A601CBA00E9B192 /* Build configuration list for PBXProject "GoLearn" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				83CBBA201A601CBA00E9B192 /* Debug */,
