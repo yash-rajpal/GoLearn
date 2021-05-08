@@ -23,7 +23,7 @@ const {width, height} = Dimensions.get('window');
 
 const googleCloud = {
   api: 'https://vision.googleapis.com/v1/images:annotate?key=',
-  apiKey: 'AIzaSyDsC3k1KRK0oazufFGOLELYAvBAd8ClEfU',
+  apiKey: 'xx--xx',
 };
 const visionApi = async (_image: string): Promise<VisionAPIResponse> => {
   return await (
