@@ -6,7 +6,6 @@ import {
   ActivityIndicator,
   Text,
 } from 'react-native';
-import auth from '@react-native-firebase/auth';
 import Layout from '../../components/layout/index';
 import {AuthNavProps} from '../../routes/paramLists';
 import Login from './login';
@@ -49,16 +48,15 @@ const Validating = () => {
 const Auth = ({navigation}: AuthNavProps<'Auth'>) => {
   const [route, setRoute] = useState<keyof Routes>('Login');
   const [quit, setQuit] = useState<boolean>(false);
-  const [confirm, setConfirm] = useState(null);
 
-  async function signInWithPhoneNumber(phoneNumber) {
-    console.log('OTP for firebase', phoneNumber);
-    const confirmation = await auth().signInWithPhoneNumber(
-      '+91' + phoneNumber,
-    );
-    console.log('confirm before comfirmation', confirmation);
-    setConfirm(confirmation);
-  }
+  // async function signInWithPhoneNumber(phoneNumber) {
+  //   console.log('OTP for firebase', phoneNumber);
+  //   const confirmation = await auth().signInWithPhoneNumber(
+  //     '+91' + phoneNumber,
+  //   );
+  //   console.log('confirm before comfirmation', confirmation);
+  //   setConfirm(confirmation);
+  // }
 
   useMemo(() => {
     if (quit)
@@ -106,14 +104,13 @@ const Auth = ({navigation}: AuthNavProps<'Auth'>) => {
       return (
         <Login
           setRoute={setRoute}
-          signInWithPhoneNumber={signInWithPhoneNumber}
+          // signInWithPhoneNumber={signInWithPhoneNumber}
         />
       );
-    } else if (route == 'Verification' && confirm !== null) {
+    } else if (route == 'Verification') {
       return (
         <OtpVerification
           setRoute={setRoute}
-          confirm={confirm}
           navigation={navigation}
         />
       );

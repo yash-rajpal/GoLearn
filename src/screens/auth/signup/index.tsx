@@ -11,7 +11,6 @@ import {
   Linking,
 } from 'react-native';
 import {Picker} from '@react-native-picker/picker';
-import auth from '@react-native-firebase/auth';
 import {themes} from '../../../constants/colors';
 import {styles} from './styles';
 import CheckBox from '@react-native-community/checkbox';
@@ -37,12 +36,6 @@ const SignUp = ({
       displayName: childName || 'testuser',
       photoURL: 'https://my-cdn.com/assets/user/123.png',
     };
-
-    try {
-      await auth().currentUser.updateProfile(update);
-    } catch (error) {
-      console.log(error);
-    }
 
     route.params.setRoute('DashBoard');
     navigation.navigate('AppFlow');

@@ -9,8 +9,6 @@ import {
 } from 'react-native';
 import {SafeAreaView} from 'react-native-safe-area-context';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
-import storage from '@react-native-firebase/storage';
-// import database from '@react-native-firebase/database';
 import * as Progress from 'react-native-progress';
 import ImageCropper, {ImageCropper as CropperType} from '../imageCropper';
 import {fontsSize, fontFamily} from '../../constants/fonts';
@@ -123,32 +121,6 @@ export default function CropEquation({navigation, route}) {
     );
   };
 
-  const uploadFirebase = (imageName: string) => {
-    const res = storage()
-      .ref('testImages/' + imageName)
-      .putString(image, 'base64');
-    res.on(
-      storage.TaskEvent.STATE_CHANGED,
-      (snapshot) => {
-        setprogress(snapshot.bytesTransferred / snapshot.totalBytes);
-        console.log(`Upload is ${progress}% done`);
-
-        switch (snapshot.state) {
-          case storage.TaskState.SUCCESS: // or 'success'
-            console.log('Upload is complete');
-            break;
-          case storage.TaskState.RUNNING: // or 'running'
-            console.log('Upload is running');
-            break;
-          default:
-            console.log(snapshot.state);
-        }
-      },
-      (error) => {
-        console.error(error);
-      },
-    );
-  };
 
   // const responseToFirebase = (response: any, keyName: string) => {
   //   database()
@@ -193,7 +165,6 @@ export default function CropEquation({navigation, route}) {
   const handleSubmit = async () => {
     setuploading(true);
     const imageName = new Date().getTime().toString();
-    uploadFirebase(imageName);
     const page = (await visionApi(image)).responses[0].fullTextAnnotation
       .pages[0];
     const blocks = page.blocks;
