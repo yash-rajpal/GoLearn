@@ -1,48 +1,24 @@
-import React, {useState, useEffect} from 'react';
-import {Text, View, TouchableOpacity, Dimensions} from 'react-native';
-import OTPInputView from '@twotalltotems/react-native-otp-input';
-import {styles} from './styles';
-import {fontFamily, fontsSize} from '../../../constants/fonts';
-import {themes} from '../../../constants/colors';
-import {Routes} from '../index';
+import React, { useState, useEffect } from "react";
+import {
+  Text,
+  View,
+  TouchableOpacity,
+  Dimensions,
+  NativeSyntheticEvent,
+  TextInputChangeEventData,
+  TextInput,
+} from "react-native";
+import OTPInputView from "@twotalltotems/react-native-otp-input";
+import { styles } from "./styles";
+import { fontFamily, fontsSize } from "../../../constants/fonts";
+import { themes } from "../../../constants/colors";
+import { Routes } from "../index";
 
-const {width, height} = Dimensions.get('window');
+const { width, height } = Dimensions.get("window");
 
-/**
- *
- *  @param otp: any
- *  @param setotp: any
- *  @return View for otp input
- * */
-const OtpView = (props: {otp: any; setotp: any}) => {
-  let {otp, setotp} = props;
-  return (
-    <OTPInputView
-      style={{
-        width: width * 0.8,
-        height: height * 0.08,
-      }}
-      pinCount={6}
-      code={otp}
-      onCodeChanged={(code) => {
-        setotp(code);
-      }}
-      codeInputFieldStyle={{
-        borderWidth: 0,
-        borderBottomWidth: 1,
-        borderColor: themes['light'].broderDark,
-        color: themes['light'].headings,
-      }}
-      codeInputHighlightStyle={{
-        borderWidth: 0,
-        borderBottomWidth: 1,
-        borderColor: themes['light'].broderDark,
-        color: themes['light'].headings,
-      }}
-    />
-  );
+const _onChangePassword = (e, setPassword) => {
+  setPassword(e.nativeEvent.text);
 };
-
 
 const OtpVerification = ({
   setRoute,
@@ -51,39 +27,63 @@ const OtpVerification = ({
   setRoute: React.Dispatch<React.SetStateAction<keyof Routes>>;
   navigation: any;
 }) => {
-  const [otp, setotp] = useState<string>('');
+  const [otp, setotp] = useState<string>("");
+  const [password, setPassword] = useState<string>("");
   return (
     <View
       style={{
-        margin: '5%',
-        paddingHorizontal: '5%',
-      }}>
+        margin: "5%",
+        paddingHorizontal: "5%",
+      }}
+    >
       <Text
         style={{
-          fontSize: fontsSize['large'],
+          fontSize: fontsSize["large"],
           fontFamily: fontFamily.headings,
-          color: themes['light'].headings,
-        }}>
-        Enter Your OTP
+          color: themes["light"].headings,
+        }}
+      >
+        Enter Your Password
       </Text>
-      <View style={{paddingTop: '7%'}} />
-      <OtpView otp={otp} setotp={setotp} />
+      <View style={{ paddingTop: "7%" }} />
+      <View style={{ flexDirection: "column" }}>
+        <Text style={{ fontWeight: "500", marginLeft: "1%" }}>Password</Text>
+        <TextInput
+          style={styles.textInput}
+          onChange={(e: NativeSyntheticEvent<TextInputChangeEventData>) => {
+            _onChangePassword(e, setPassword);
+          }}
+          placeholderTextColor={themes["light"].inactiveTintColor}
+          placeholder="password"
+          value={password}
+        />
+      </View>
+      {/* textInput bottom border UI*/}
+      <View
+        style={{
+          ...styles.textInputBottomBorder,
+          width: width * 0.7,
+          marginLeft: "1%",
+        }}
+      />
       <TouchableOpacity
         style={
           otp.length === 6
-            ? {...styles.continue, backgroundColor: themes['light'].buttons}
-            : {...styles.continue, backgroundColor: themes['light'].buttons}
+            ? { ...styles.continue, backgroundColor: themes["light"].buttons }
+            : { ...styles.continue, backgroundColor: themes["light"].buttons }
         }
         onPress={() => {
-          setRoute('SelectUserType');
+          setRoute("SelectUserType");
         }}
-        disabled={!(otp.length === 6)}>
+        // disabled={!(otp.length === 6)}
+      >
         <View>
           <Text
             style={{
-              color: themes['light'].buttonText,
+              color: themes["light"].buttonText,
               fontFamily: fontFamily.buttonText,
-            }}>
+            }}
+          >
             Continue
           </Text>
         </View>
