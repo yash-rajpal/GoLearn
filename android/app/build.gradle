@@ -1,5 +1,5 @@
 apply plugin: "com.android.application"
-apply plugin: 'com.google.gms.google-services' // <- Add this line
+// apply plugin: 'com.google.gms.google-services' // <- Add this line
 
 import com.android.build.OutputFile
 
@@ -208,12 +208,12 @@ dependencies {
     implementation "com.facebook.react:react-native:+"  // From node_modules
     // implementation 'com.android.support:multidex:1.0.3'  //with support libraries
     implementation 'androidx.multidex:multidex:2.0.1'  //with androidx libraries
-        implementation 'com.google.firebase:firebase-auth'
+        // implementation 'com.google.firebase:firebase-auth'
 
     implementation "androidx.browser:browser:1.2.0"
     implementation "androidx.swiperefreshlayout:swiperefreshlayout:1.0.0"
     implementation platform('com.google.firebase:firebase-bom:26.5.0')
-    implementation 'com.google.firebase:firebase-auth'
+    // implementation 'com.google.firebase:firebase-auth'
 
 
     debugImplementation("com.facebook.flipper:flipper:${FLIPPER_VERSION}") {
