@@ -29,6 +29,7 @@
     "react-native-canvas": "^0.1.37",
     "react-native-device-info": "7.0.2",
     "react-native-gesture-handler": "^1.10.1",
+    "react-native-image-crop-picker": "0.33.2",
     "react-native-pdf": "^6.3.0",
     "react-native-progress": "^4.1.2",
     "react-native-reanimated": "2.0.0-alpha.9.2",
