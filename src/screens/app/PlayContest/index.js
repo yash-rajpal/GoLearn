@@ -16,10 +16,10 @@ import {
 } from 'react-native';
 
 //Libraries
-import {useDispatch, useSelector} from 'react-redux';
+// import {useDispatch, useSelector} from 'react-redux';
 import LottieView from 'lottie-react-native';
 import Icon from 'react-native-vector-icons/Ionicons';
-import {NavigationEvents} from 'react-navigation';
+// import {NavigationEvents} from 'react-navigation';
 
 
 //Styles
@@ -52,16 +52,17 @@ import config from '../../../config/theme';
 // const token = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImNrZG41NGExMzAwODM0bTY2Y25mOHBqcWciLCJ0eXBlIjoiVGVhY2hlciIsImlhdCI6MTYwMTc0MDkxM30.P5dtl_HoPg_9GU9TZ1EPt3t8LAvO4kz2xJyZsv8DQyw';
 
 const PlayContest = ({navigation}) => {
-    const {
-        token,
-        contestQuestions,
-    } = useSelector(state => ({
-        token: state.token.token,
-        contestQuestions: state.contestQuestions,
-    }));
+    // const {
+    //     token,
+    //     contestQuestions,
+    // } = useSelector(state => ({
+    //     token: state.token.token,
+    //     contestQuestions: state.contestQuestions,
+    // }));
+    const contestQuestions = require('../../../constants/questions_dummy.json')
     const {contest_questions} = contestQuestions;
     const {showToast} = useToast();
-    const dispatch = useDispatch();
+    // const dispatch = useDispatch();
     const [animation, setAnimation] = React.useState(true);
     const [questionIndex, setQuestionIndex] = React.useState(0);
     const [expandImage, setExpandImage] = React.useState();
@@ -78,7 +79,8 @@ const PlayContest = ({navigation}) => {
         setTimeout(() => {
             setAnimation(false);
         }, 4000);
-        dispatch(fetchContestQuestions(contestId, token));
+        //API CAll Fetch Quiz
+        // dispatch(fetchContestQuestions(contestId, token));
 
         //backhandler
         const backAction = () => {
@@ -100,6 +102,7 @@ const PlayContest = ({navigation}) => {
         if (contestQuestions.errMess) {
             showToast(ToastType.Error, contestQuestions.errMess.hasOwnProperty('message') ? contestQuestions.errMess.message : contestQuestions.errMess, 2000)
         }
+        _startContest();
     }, [contestQuestions])
 
     /**
@@ -187,7 +190,7 @@ const PlayContest = ({navigation}) => {
             </ThemeModal>
             {animation ? (
                 <View style={styles.animView}>
-                    <LottieView source={require('../../../assets/animation/loading.json')} autoPlay
+                    <LottieView source={require('../../../assets/loading.json')} autoPlay
                                 style={styles.animation}/>
                 </View>
             ) : (
@@ -209,9 +212,9 @@ const PlayContest = ({navigation}) => {
                     </TouchableOpacity>
                 </View>
             )}
-            <NavigationEvents
+            {/* <NavigationEvents
                 onDidFocus={() => _startContest()}
-            />
+            /> */}
         </SafeAreaView>
     );
 };

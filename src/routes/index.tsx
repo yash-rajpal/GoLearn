@@ -15,6 +15,7 @@ import Auth from "../screens/auth/index";
 import Profile from "../screens/app/Profile";
 import DisplayPDF from "../screens/app/viewAssignment/displayPDF";
 import ReferalScreen from "../screens/app/referalScreen";
+import PlayContest from "../screens/app/PlayContest";
 
 const AuthStack = createStackNavigator<AuthParamList>();
 const AuthStackNavigator = () => {
@@ -95,13 +96,13 @@ const MainAppStackNavigator = () => {
     <NavigationContainer>
       <MainAppStack.Navigator
         screenOptions={{ headerShown: false }}
-        initialRouteName="AuthFlow"
+        initialRouteName="Dummy"
       >
         <MainAppStack.Screen name="AuthFlow" component={AuthStackNavigator} />
         <MainAppStack.Screen name="AppFlow" component={TabNavigator} />
         <MainAppStack.Screen name="ViewAssignment" component={ViewAssignment} />
         <MainAppStack.Screen name="DisplayPDF" component={DisplayPDF} />
-        <MainAppStack.Screen name="Dummy" component={Dummy} />
+        <MainAppStack.Screen name="Dummy" component={PlayContest} />
         <MainAppStack.Screen name="Camera" component={Camera} />
         <MainAppStack.Screen name="ReferalScreen" component={ReferalScreen} />
       </MainAppStack.Navigator>
