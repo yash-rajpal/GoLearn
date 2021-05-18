@@ -67,12 +67,13 @@ const PlayContest = ({navigation}) => {
     const [questionIndex, setQuestionIndex] = React.useState(0);
     const [expandImage, setExpandImage] = React.useState();
     const [modalVisible, setModalVisible] = React.useState(false);
-    const {contestId, timer} = navigation.state.params;
+    // const {contestId, timer} = navigation.state.params;
+    const timer = 3000
     const [loading, setLoading] = React.useState(true);
 
     React.useEffect(() => {
         setLoading(false);
-        navigation.setParams({tabBarVisible: false});
+        // navigation.setParams({tabBarVisible: false});
         // console.log('PlayContest', store.getState());
         setQuestionIndex(0);
         setAnimation(true);
@@ -115,9 +116,9 @@ const PlayContest = ({navigation}) => {
             setQuestionIndex(i);
         } else {
             // alert('navigate');
-            navigation.navigate('ContestFeedback', {
-                contestId: contestId,
-            });
+            // navigation.navigate('ContestFeedback', {
+            //     contestId: contestId,
+            // });
             setLoading(true);
         }
     };
@@ -133,13 +134,13 @@ const PlayContest = ({navigation}) => {
         //         timeStamp: new Date().toISOString(),
         //     });
         setModalVisible(!modalVisible);
-        navigation.navigate('Home');
+        // navigation.navigate('Home');
     };
     /**
      * Navigation Focus
      */
     const _startContest = () => {
-        dispatch(fetchContestQuestions(contestId, token));
+        // dispatch(fetchContestQuestions(contestId, token));
         // console.log('playId', contestId);
         setQuestionIndex(0);
         setAnimation(true);
@@ -203,7 +204,6 @@ const PlayContest = ({navigation}) => {
                         i === questionIndex ? (
                             <PlayContestHeader data={item}
                                                index={i}
-                                               contestId={contestId}
                                                renderNext={_renderNextQuestion}
                                                expandImage={(img) => setExpandImage(img)}
                                                qTimer={timer}/>
@@ -211,7 +211,7 @@ const PlayContest = ({navigation}) => {
                     );
                 }) : <View style={styles.center}>
                     <Text style={styles.heading}>Oops no contest data found</Text>
-                    <TouchableOpacity onPress={() => navigation.navigate('Home')} style={styles.backBtn}>
+                    <TouchableOpacity onPress={() => console.log("Go Home")} style={styles.backBtn}>
                         <Text style={styles.btnTxt}>Go To Home</Text>
                     </TouchableOpacity>
                 </View>

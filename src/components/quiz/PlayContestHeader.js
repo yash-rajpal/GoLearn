@@ -18,30 +18,30 @@ import {
 
 //Libraries
 import Icon from 'react-native-vector-icons/Ionicons';
-import {useDispatch, useSelector, useStore} from 'react-redux';
+// import {useDispatch, useSelector, useStore} from 'react-redux';
 
 //Theme
 import theme from '../../config/theme';
 
 //Components
-import {ToastType} from './Toast';
+// import {ToastType} from './Toast';
 
 //Config
 import config from '../../config/theme';
 
 //Utils
-import localized_strings from '../../utils/Translation';
+// import localized_strings from '../../utils/Translation';
 
 //redux
-import {
-    fetchPostSubmittedAns,
-} from '../../redux/ActionCreators';
+// import {
+//     fetchPostSubmittedAns,
+// } from '../../redux/ActionCreators';
 
 //context
-import {useToast} from '../../context/ToastProvider';
+// import {useToast} from '../../context/ToastProvider';
 
 // crashlytics
-import {crashlyticsLogError, analyticsLogEvent, AnalyticsEvents, Screens} from '../../hooks';
+// import {crashlyticsLogError, analyticsLogEvent, AnalyticsEvents, Screens} from '../../hooks';
 
 /**
  * Convert array to arrayOfObjects
@@ -57,15 +57,15 @@ const convertArray = (array) => {
 // const token = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImNrZG41NGExMzAwODM0bTY2Y25mOHBqcWciLCJ0eXBlIjoiVGVhY2hlciIsImlhdCI6MTYwMTc0MDkxM30.P5dtl_HoPg_9GU9TZ1EPt3t8LAvO4kz2xJyZsv8DQyw';
 
 const PlayContestHeader = (props) => {
-    const {data, index, contestId, qTimer} = props;
+    const {data, index, qTimer} = props;
     const {height: windowHeight, width: windowWidth} = useWindowDimensions();
-    const {token, submitAnswer} = useSelector(({token, submitAnswer}) => ({
-        token: token.token,
-        submitAnswer: submitAnswer,
-    }));
-    const dispatch = useDispatch();
+    // const {token, submitAnswer} = useSelector(({token, submitAnswer}) => ({
+    //     token: token.token,
+    //     submitAnswer: submitAnswer,
+    // }));
+    // const dispatch = useDispatch();
     // const store = useStore();
-    const {showToast, showLoading} = useToast();
+    // const {showToast, showLoading} = useToast();
     const [timer, setTimer] = React.useState(qTimer);
     const [showSolution, setShowSolution] = React.useState(false);
     const [ansOptions, setAnsOptions] = React.useState(convertArray(data.options));
@@ -120,30 +120,30 @@ const PlayContestHeader = (props) => {
     // }, [nextInterval]);
     /*--------- End// Commented due time not enough to evaluate solution -------*/
 
-    React.useEffect(() => {
-        let isSubscribed = true;
-        if (isSubscribed) {
-            if (!submitAnswer.isLoading && submitAnswer.submitted_ans) {
-                showLoading(false);
-                /*--------- End// Commented due time not enough to evaluate solution -------*/
-                // setNextInterval(7);
-                /*--------- End// Commented due time not enough to evaluate solution -------*/
-            } else {
-                if (submitAnswer.errMess) {
-                    // crashlyticsLogError(submitAns.errMess)
-                    showLoading(false);
-                    // console.log(submitAnswer.errMess);
-                    if (submitAnswer.errMess && submitAnswer.errMess.message === 'Contest is already submitted') {
-                        console.log(submitAnswer.errMess);
-                    } else {
-                        showToast(ToastType.Error, submitAnswer.errMess.hasOwnProperty('message') ? submitAnswer.errMess.message : submitAns.errMess, 2000);
-                    }
-                    // alert('error');
-                }
-            }
-        }
-        return () => isSubscribed = false;
-    }, [submitAnswer]);
+    // React.useEffect(() => {
+    //     let isSubscribed = true;
+    //     if (isSubscribed) {
+    //         if (!submitAnswer.isLoading && submitAnswer.submitted_ans) {
+    //             showLoading(false);
+    //             /*--------- End// Commented due time not enough to evaluate solution -------*/
+    //             // setNextInterval(7);
+    //             /*--------- End// Commented due time not enough to evaluate solution -------*/
+    //         } else {
+    //             if (submitAnswer.errMess) {
+    //                 // crashlyticsLogError(submitAns.errMess)
+    //                 showLoading(false);
+    //                 // console.log(submitAnswer.errMess);
+    //                 if (submitAnswer.errMess && submitAnswer.errMess.message === 'Contest is already submitted') {
+    //                     console.log(submitAnswer.errMess);
+    //                 } else {
+    //                     showToast(ToastType.Error, submitAnswer.errMess.hasOwnProperty('message') ? submitAnswer.errMess.message : submitAns.errMess, 2000);
+    //                 }
+    //                 // alert('error');
+    //             }
+    //         }
+    //     }
+    //     return () => isSubscribed = false;
+    // }, [submitAnswer]);
     // console.log('token', token);
 
 
@@ -154,9 +154,9 @@ const PlayContestHeader = (props) => {
      * @filter filter the user chosen option along with correctAnswer Option
      */
     const _getAnswer = (index) => {
-        dispatch(fetchPostSubmittedAns(contestId, {questionId: data.id, response: ansOptions[index].name}, token));
+        // dispatch(fetchPostSubmittedAns(contestId, {questionId: data.id, response: ansOptions[index].name}, token));
         setStopQuestTimer(true);
-        showLoading(true);
+        // showLoading(true);
         let ansIndex = data.options.indexOf(data.answer);
         console.log(ansIndex);
         const newAnsOptions = ansOptions.map((item, i) => ({
@@ -227,12 +227,12 @@ const PlayContestHeader = (props) => {
      * Skip Question
      */
     const _skipQuestion = () => {
-        analyticsLogEvent(AnalyticsEvents.QuestionSkipped, {
-            screenName: Screens.PlayContest,
-            timeStamp: new Date().toISOString(),
-        });
+        // analyticsLogEvent(AnalyticsEvents.QuestionSkipped, {
+        //     screenName: Screens.PlayContest,
+        //     timeStamp: new Date().toISOString(),
+        // });
         props.renderNext(index + 1);
-        dispatch(fetchPostSubmittedAns(contestId, {questionId: data.id, response: ''}, token));
+        // dispatch(fetchPostSubmittedAns(contestId, {questionId: data.id, response: ''}, token));
     };
     /*
      * Report Question
@@ -252,7 +252,7 @@ const PlayContestHeader = (props) => {
                         <Text style={styles.questHeaderTxt}>Q . {index + 1}</Text>
                     </View>
                     <View style={styles.timer}>
-                        <Image source={require('../../assets/images/clock.png')} style={styles.righticon}/>
+                        <Image source={require('../../assets/Images/clock.png')} style={styles.righticon}/>
                         <Text style={styles.timerTxt}>00: {timer < 10 ? '0' + timer : timer}</Text>
                     </View>
                 </View>
@@ -290,7 +290,7 @@ const PlayContestHeader = (props) => {
                     {data && data.explanationImgUrls.length || data.questionImgUrls.length ? (
                         <TouchableOpacity style={[styles.rightOption]}
                                           onPress={() => props.expandImage(toggleQuestion ? data.explanationImgUrls[0] : data.questionImgUrls[0])}>
-                            <Image source={require('../../assets/images/expand.png')}
+                            <Image source={require('../../assets/Images/expand.png')}
                                    style={styles.expandIcon}/>
                         </TouchableOpacity>
                     ) : null}
@@ -348,7 +348,7 @@ const PlayContestHeader = (props) => {
                                           color={theme.colors.white} size={20}/>
                                 </View>
                                 <Text style={[styles.textDanger, isCorrect ? {color: 'green'} : {color: 'red'}]}>
-                                    {isCorrect ? localized_strings.yay_correct_answer : localized_strings.opps_wrong_ans}
+                                    {isCorrect ? "Correct Ans" : "opps_wrong_ans"}
                                 </Text>
                             </View>
                         </View>
