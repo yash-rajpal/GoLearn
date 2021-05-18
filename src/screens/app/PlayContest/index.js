@@ -1,8 +1,3 @@
-/*---------------------------------------------------------------*
- *   @author: Harish Kumar                                       *
- *   @licence: Copyright, All Rights Reserved to Saarthiapp      *
- *   @flow                                                       *
- *---------------------------------------------------------------*/
 import React from 'react';
 import {
     View,

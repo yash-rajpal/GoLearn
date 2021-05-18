@@ -1,9 +1,3 @@
-/*---------------------------------------------------------------*
- *   @author: Harish Kumar                                       *
- *   @licence: Copyright, All Rights Reserved to Ajnasoft        *
- *   @flow                                                       *
- *---------------------------------------------------------------*/
-
 // Theme Config
 
 export default {
