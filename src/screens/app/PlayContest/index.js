@@ -26,28 +26,28 @@ import Icon from 'react-native-vector-icons/Ionicons';
 import styles from './styles';
 
 //Components
-import PlayContestHeader from '../../../components/common/PlayContestHeader';
-import {ThemeModal} from '../../../components/common';
-import {ToastType} from '../../../components/common/Toast'
+import PlayContestHeader from '../../../components/quiz/PlayContestHeader';
+import {ThemeModal} from '../../../components/quiz/Modal';
+// import {ToastType} from '../../../components/common/Toast'
 
 //Utils
-import localized_strings from '../../../utils/Translation';
+// import localized_strings from '../../../utils/Translation';
 
 //theme
 import theme from '../../../config/theme';
 
 
 //redux
-import {
-    fetchContestQuestions,
-} from '../../../redux/ActionCreators';
+// import {
+//     fetchContestQuestions,
+// } from '../../../redux/ActionCreators';
 
 //context
-import {useToast} from '../../../context/ToastProvider';
+// import {useToast} from '../../../context/ToastProvider';
 
 // analytics and crashlytics
-import {analyticsLogEvent, AnalyticsEvents, Screens} from '../../../hooks';
-import config from '../../../config/theme';
+// import {analyticsLogEvent, AnalyticsEvents, Screens} from '../../../hooks';
+// import config from '../../../config/theme';
 
 // const token = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImNrZG41NGExMzAwODM0bTY2Y25mOHBqcWciLCJ0eXBlIjoiVGVhY2hlciIsImlhdCI6MTYwMTc0MDkxM30.P5dtl_HoPg_9GU9TZ1EPt3t8LAvO4kz2xJyZsv8DQyw';
 
@@ -61,7 +61,7 @@ const PlayContest = ({navigation}) => {
     // }));
     const contestQuestions = require('../../../constants/questions_dummy.json')
     const {contest_questions} = contestQuestions;
-    const {showToast} = useToast();
+    // const {showToast} = useToast();
     // const dispatch = useDispatch();
     const [animation, setAnimation] = React.useState(true);
     const [questionIndex, setQuestionIndex] = React.useState(0);
@@ -100,7 +100,8 @@ const PlayContest = ({navigation}) => {
 
     React.useEffect(() => {
         if (contestQuestions.errMess) {
-            showToast(ToastType.Error, contestQuestions.errMess.hasOwnProperty('message') ? contestQuestions.errMess.message : contestQuestions.errMess, 2000)
+            // showToast(ToastType.Error, contestQuestions.errMess.hasOwnProperty('message') ? contestQuestions.errMess.message : contestQuestions.errMess, 2000)
+            console.log("Error bhaag salle")
         }
         _startContest();
     }, [contestQuestions])
@@ -124,13 +125,13 @@ const PlayContest = ({navigation}) => {
      * Navigate Home
      */
     const _navigatePrev = () => {
-        analyticsLogEvent(
-            questionIndex > 0 ?
-                AnalyticsEvents.ExitContestPlayedOne :
-                AnalyticsEvents.ExitContestNoPlay, {
-                screenName: Screens.PlayContest,
-                timeStamp: new Date().toISOString(),
-            });
+        // analyticsLogEvent(
+        //     questionIndex > 0 ?
+        //         AnalyticsEvents.ExitContestPlayedOne :
+        //         AnalyticsEvents.ExitContestNoPlay, {
+        //         screenName: Screens.PlayContest,
+        //         timeStamp: new Date().toISOString(),
+        //     });
         setModalVisible(!modalVisible);
         navigation.navigate('Home');
     };
@@ -169,21 +170,24 @@ const PlayContest = ({navigation}) => {
                 <View style={styles.modalContent}>
                     <Text
                         style={styles.modalTxt}>
-                        {localized_strings.sure_quit}
+                        {/* {localized_strings.sure_quit} */}
+                        quit
                     </Text>
                 </View>
                 <View style={styles.modalFooter}>
                     <TouchableOpacity style={styles.btnDefault} onPress={_navigatePrev}>
                         <Text
                             style={styles.btnDefaultTxt}>
-                            {localized_strings.quit}
+                            {/* {localized_strings.quit} */}
+                            quit
                         </Text>
                     </TouchableOpacity>
                     <TouchableOpacity style={[styles.btnDefault, styles.bgTheme]}
                                       onPress={() => setModalVisible(!modalVisible)}>
                         <Text
                             style={[styles.btnDefaultTxt, styles.clrWhite]}>
-                            {localized_strings.keep_playing}
+                            {/* {localized_strings.keep_playing} */}
+                            keep playing
                         </Text>
                     </TouchableOpacity>
                 </View>
