@@ -1,97 +1,72 @@
-/* eslint-disable react-native/no-inline-styles */
-import React, {useState} from 'react';
-import {View, TouchableOpacity, ActivityIndicator} from 'react-native';
-import {RNCamera} from 'react-native-camera';
-import Icon from 'react-native-vector-icons/MaterialIcons';
-import {style} from './styles';
+import React, { useEffect, useState } from "react";
+import { View, TouchableOpacity, Image, Dimensions, Text } from "react-native";
+import ImagePicker, { ImageOrVideo } from "react-native-image-crop-picker";
+import { themes } from "../../constants/colors";
+import { fontsSize } from "../../constants/fonts";
+import { styles } from "./styles";
 
-const flashIcons = ['flash-off', 'flash-auto', 'flash-on'];
+const { width: WIDTH, height: HEIGHT } = Dimensions.get("window");
 
-export default function Camera({navigation}) {
-  const [flash, setFlash] = useState(0);
-  const [cameraState, setCameraState] = useState('BACK');
-  const takePicture = async (camera) => {
-    const options = {quality: 0.5, base64: true};
-    const data = await camera.takePictureAsync(options);
-    const image = data.base64;
-    // console.log(image);
-    navigation.navigate('CropEquation', {image});
-    console.log(Object.keys(data));
+const Camera = ({ navigation }) => {
+  // eslint-disable no-unused-vars
+  const [img, setImg] = useState<ImageOrVideo>();
+  const [base64, setBase64] = useState<string>("");
+  const [path, setPath] = useState<string>();
+  const [retake, setRetake] = useState<boolean>(false);
+  const [ratio, setRatio] = useState<number>(1);
+
+  const imagePickerConfig = {
+    width: 550,
+    height: 750,
+    cropping: true,
+    includeBase64: true,
+    cropperActiveWidgetColor: themes["light"].backgroundDark,
+    showCropGuidelines: false,
+    cropperTintColor: themes["light"].activeTintColor,
+    // showCropFrame: false,
+    freeStyleCropEnabled: true,
+    enableRotationGesture: true,
+    // hideBottomControls: true,
+    cropperToolbarTitle: "Crop Image",
+    compressImageQuality: 1,
+    cropperStatusBarColor: themes["light"].backgroundDark,
   };
-
+  useEffect(() => {
+    ImagePicker.openCamera(imagePickerConfig)
+      .then((image) => {
+        setImg(image);
+        setPath(image.path);
+        setRatio(image.height / image.width);
+        setBase64(image.data);
+      })
+      .catch((e) => {
+        console.log("e = ", e);
+        navigation.goBack();
+      });
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [retake]);
+  if (path?.length === 0) {
+    return null;
+  }
   return (
-    <View style={style.container}>
-      <RNCamera
-        style={style.preview}
-        flashMode={
-          flash === 0
-            ? RNCamera.Constants.FlashMode.off
-            : flash === 1
-            ? RNCamera.Constants.FlashMode.auto
-            : RNCamera.Constants.FlashMode.on
-        }
-        type={
-          cameraState === 'BACK'
-            ? RNCamera.Constants.Type.back
-            : RNCamera.Constants.Type.front
-        }>
-        {({camera, status}) => {
-          if (status !== 'READY') {
-            return (
-              <View
-                style={{
-                  flex: 1,
-                  alignItems: 'center',
-                  flexDirection: 'row',
-                  justifyContent: 'space-around',
-                  padding: 10,
-                  zIndex: 1,
-                  position: 'absolute',
-                  left: 0,
-                  top: 0,
-                  width: '100%',
-                  height: '100%',
-                }}>
-                <ActivityIndicator size="large" color="#0D145B" />
-              </View>
-            );
-          }
-          return (
-            <View
-              style={{
-                flex: 0,
-                flexDirection: 'row',
-                justifyContent: 'space-between',
-                alignItems: 'center',
-                paddingLeft: 20,
-                paddingRight: 20,
-                backgroundColor: 'black',
-                width: '100%',
-              }}>
-              <TouchableOpacity
-                onPress={() => {
-                  setFlash((flash + 1) % 3);
-                }}>
-                <Icon name={flashIcons[flash]} size={35} color="white" />
-              </TouchableOpacity>
-              <TouchableOpacity
-                onPress={() => takePicture(camera)}
-                style={style.capture}
-              />
-              <TouchableOpacity
-                onPress={() => {
-                  if (cameraState === 'BACK') {
-                    setCameraState('FRONT');
-                  } else {
-                    setCameraState('BACK');
-                  }
-                }}>
-                <Icon name="flip-camera-android" size={35} color="white" />
-              </TouchableOpacity>
-            </View>
-          );
-        }}
-      </RNCamera>
+    <View
+      style={{
+        flex: 1,
+        marginTop: "5%",
+        height: HEIGHT,
+      }}
+    >
+      <View>
+        <Image
+          source={{ uri: path }}
+          style={{
+            height: ratio * WIDTH,
+            width: WIDTH,
+          }}
+        />
+      </View>
     </View>
   );
-}
+};
+
+export default Camera;
