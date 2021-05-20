@@ -7,11 +7,11 @@ import FilteredComponentLayout from "./filteredComponentLayout";
 import { TextInput } from "react-native-gesture-handler";
 import { startQuiz } from "../../api";
 
-const ModalContent = ({token}) => {
+const ModalContent = ({token, navigation}) => {
   const [name, setName] = useState('');
   const [desc, setDesc] = useState('');
   const [text, setText] = useState('');
-  const [loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState(false);
   if(!loading)
   return (
     <View style={{}}>
@@ -77,8 +77,10 @@ const ModalContent = ({token}) => {
             }
             setLoading(true);
             const res = await startQuiz(obj,token)
-            if(res)
+            if(res){
             //navigate to quiz
+            navigation.navigate('PlayContest', {contestQuestions: res})
+            }
             console.log("Waiting", res)
           }}
         >

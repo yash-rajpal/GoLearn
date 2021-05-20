@@ -102,7 +102,7 @@ const MainAppStackNavigator = () => {
         <MainAppStack.Screen name="AppFlow" component={TabNavigator} />
         <MainAppStack.Screen name="ViewAssignment" component={ViewAssignment} />
         <MainAppStack.Screen name="DisplayPDF" component={DisplayPDF} />
-        <MainAppStack.Screen name="Dummy" component={PlayContest} />
+        <MainAppStack.Screen name="PlayContest" component={PlayContest} />
         <MainAppStack.Screen name="Camera" component={Camera} />
         <MainAppStack.Screen name="ReferalScreen" component={ReferalScreen} />
       </MainAppStack.Navigator>

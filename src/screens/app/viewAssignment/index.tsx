@@ -88,7 +88,7 @@ const ViewAssignment = ({ navigation, route }) => {
             </Text>
           </TouchableOpacity>
         </View>
-        <BottomModal visible={visible} SetVisible={SetVisible} token={route.params.token} />
+        <BottomModal visible={visible} SetVisible={SetVisible} token={route.params.token} navigation={navigation}/>
       </View>
     </LayoutWithoutCarousel>
   );
