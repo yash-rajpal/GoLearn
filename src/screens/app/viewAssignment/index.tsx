@@ -48,8 +48,8 @@ const ViewAssignment = ({ navigation }) => {
               backgroundColor: "rgba(91, 102, 255, 0.8)",
             }}
             onPress={async () => {
-              // SetVisible(true);
-              const quizdata = await startQuiz({}, "");
+              SetVisible(true);
+              // const quizdata = await startQuiz({}, "");
             }}
           >
             <Text
