@@ -96,7 +96,7 @@ const MainAppStackNavigator = () => {
     <NavigationContainer>
       <MainAppStack.Navigator
         screenOptions={{ headerShown: false }}
-        initialRouteName="AppFlow"
+        initialRouteName="AuthFlow"
       >
         <MainAppStack.Screen name="AuthFlow" component={AuthStackNavigator} />
         <MainAppStack.Screen name="AppFlow" component={TabNavigator} />

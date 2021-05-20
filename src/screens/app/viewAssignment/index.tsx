@@ -8,7 +8,8 @@ import { startQuiz } from "../../../api";
 
 const { width } = Dimensions.get("window");
 
-const ViewAssignment = ({ navigation }) => {
+const ViewAssignment = ({ navigation, route }) => {
+  console.log("route", route.params.token)
   const [visible, SetVisible] = useState<boolean>(false);
   return (
     <LayoutWithoutCarousel imgsrc={0} navigation={navigation}>
@@ -87,7 +88,7 @@ const ViewAssignment = ({ navigation }) => {
             </Text>
           </TouchableOpacity>
         </View>
-        <BottomModal visible={visible} SetVisible={SetVisible} />
+        <BottomModal visible={visible} SetVisible={SetVisible} token={route.params.token} />
       </View>
     </LayoutWithoutCarousel>
   );

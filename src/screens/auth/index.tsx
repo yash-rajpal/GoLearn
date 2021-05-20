@@ -51,7 +51,7 @@ const Auth = ({ navigation }: AuthNavProps<"Auth">) => {
   const [route, setRoute] = useState<keyof Routes>("Login");
   const [quit, setQuit] = useState<boolean>(false);
   const [email, setEmail] = useState("");
-  const [token, setToken] = useState("");
+  const [token, setToken] = useState("test");
   // async function signInWithPhoneNumber(phoneNumber) {
   //   console.log('OTP for firebase', phoneNumber);
   //   const confirmation = await auth().signInWithPhoneNumber(
@@ -119,6 +119,7 @@ const Auth = ({ navigation }: AuthNavProps<"Auth">) => {
           navigation={navigation}
           email={email}
           setToken={setToken}
+          token = {token}
         />
       );
     } else if (route == "SelectUserType" || route == "SignUp") {
