@@ -83,7 +83,7 @@ const TabNavigator = () => {
       }}
     >
       <Tab.Screen name="Dashboard" component={Dummy} />
-      <Tab.Screen name="Worksheets" component={SearchAssignment} />
+      <Tab.Screen name="Worksheets" component={ViewAssignment} />
       <Tab.Screen name="Profile" component={Profile} />
     </Tab.Navigator>
   );
