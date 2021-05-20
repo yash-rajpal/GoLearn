@@ -1,3 +1,9 @@
+/**
+ *
+ * Login email : abc@gmail.com
+ * password:12345
+ */
+
 const baseurl = "https://tarp-golearn.herokuapp.com";
 
 const url = {
@@ -48,8 +54,7 @@ export const studentCreateUser = async (obj, token) => {
   let result = "";
   const headers = {
     "Content-Type": "application/json",
-    // Accept: "application/json",
-    Authorization: token, //`token ${token}`,
+    Authorization: `token ${token}`,
   };
   let res = await fetch(baseurl + url.student_createUser, {
     method: "POST",

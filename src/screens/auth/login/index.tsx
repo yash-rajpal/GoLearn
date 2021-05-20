@@ -19,8 +19,8 @@ import { fontsSize } from "../../../constants/fonts";
 import { Routes } from "../index";
 const { width } = Dimensions.get("window");
 
-const _onChangeEmail = (e, setEmail, setIsEmailValid) => {
-  setEmail(e.nativeEvent.text);
+const _onChangeEmail = (e, setEmailLocal, setIsEmailValid) => {
+  setEmailLocal(e.nativeEvent.text);
   let reg = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w\w+)+$/;
   console.log(reg.test(e.nativeEvent.text));
   if (reg.test(e.nativeEvent.text) == true) {
@@ -32,10 +32,14 @@ const _onChangeEmail = (e, setEmail, setIsEmailValid) => {
 
 const Login = ({
   setRoute,
+  email,
+  setEmail,
 }: {
   setRoute: React.Dispatch<React.SetStateAction<keyof Routes>>;
+  email: any;
+  setEmail: any;
 }) => {
-  const [email, setEmail] = useState<string>("");
+  const [email_local, setEmailLocal] = useState<string>("");
   const [isEmailValid, setIsEmailValid] = useState<boolean>(false);
 
   const errorMsg = ["check the format of the Email address. "];
@@ -70,11 +74,11 @@ const Login = ({
           <TextInput
             style={styles.textInput}
             onChange={(e: NativeSyntheticEvent<TextInputChangeEventData>) => {
-              _onChangeEmail(e, setEmail, setIsEmailValid);
+              _onChangeEmail(e, setEmailLocal, setIsEmailValid);
             }}
             placeholderTextColor={themes["light"].inactiveTintColor}
             placeholder="someone@example.com"
-            value={email}
+            value={email_local}
           />
           {isEmailValid ? (
             <Image
@@ -94,7 +98,7 @@ const Login = ({
       />
 
       {/* error message if email is wrong  */}
-      {email.length > 0 ? (
+      {email_local.length > 0 ? (
         isEmailValid ? (
           <View style={{ marginBottom: "3%" }} />
         ) : (
@@ -113,9 +117,10 @@ const Login = ({
             : { ...styles.getOTP, backgroundColor: themes["light"].buttons }
         }
         onPress={() => {
+          setEmail(email_local);
           setRoute("Verification");
         }}
-        disabled={!isEmailValid}
+        // disabled={!isEmailValid}
       >
         <View>
           <Text
