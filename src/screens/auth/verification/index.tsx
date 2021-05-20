@@ -26,11 +26,13 @@ const OtpVerification = ({
   navigation,
   email,
   setToken,
+  token,
 }: {
   setRoute: React.Dispatch<React.SetStateAction<keyof Routes>>;
   navigation: any;
   email: any;
   setToken: any;
+  token: any;
 }) => {
   const [otp, setotp] = useState<string>("");
   const [password, setPassword] = useState<string>("");
@@ -78,11 +80,15 @@ const OtpVerification = ({
             : { ...styles.continue, backgroundColor: themes["light"].buttons }
         }
         onPress={async () => {
+          setRoute("null");
           const token = await tokenLogin({ email, password });
           if (token) {
             setToken(token);
             setRoute("DashBoard");
-            navigation.navigate("AppFlow");
+            navigation.navigate("AppFlow", {
+              screen: "Worksheets",
+              params: { token: token },
+            });
           }
         }}
         // disabled={!(otp.length === 6)}

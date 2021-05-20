@@ -79,7 +79,7 @@ const BottomModal = (props) => {
           <View style={styles.sliderIndicatorRow}>
             <View style={styles.sliderIndicator} />
           </View>
-          <ModalContent />
+          <ModalContent {...props}/>
         </Animated.View>
       </TouchableOpacity>
     </Modal>

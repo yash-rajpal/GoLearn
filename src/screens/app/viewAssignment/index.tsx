@@ -8,7 +8,8 @@ import { startQuiz } from "../../../api";
 
 const { width } = Dimensions.get("window");
 
-const ViewAssignment = ({ navigation }) => {
+const ViewAssignment = ({ navigation, route }) => {
+  console.log("route", route.params.token)
   const [visible, SetVisible] = useState<boolean>(false);
   return (
     <LayoutWithoutCarousel imgsrc={0} navigation={navigation}>
@@ -48,8 +49,8 @@ const ViewAssignment = ({ navigation }) => {
               backgroundColor: "rgba(91, 102, 255, 0.8)",
             }}
             onPress={async () => {
-              // SetVisible(true);
-              const quizdata = await startQuiz({}, "");
+              SetVisible(true);
+              // const quizdata = await startQuiz({}, "");
             }}
           >
             <Text
@@ -87,7 +88,7 @@ const ViewAssignment = ({ navigation }) => {
             </Text>
           </TouchableOpacity>
         </View>
-        <BottomModal visible={visible} SetVisible={SetVisible} />
+        <BottomModal visible={visible} SetVisible={SetVisible} token={route.params.token} navigation={navigation}/>
       </View>
     </LayoutWithoutCarousel>
   );
