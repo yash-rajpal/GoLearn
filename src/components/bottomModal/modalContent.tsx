@@ -1,103 +1,118 @@
 import React, { useState } from "react";
-import { Dimensions, View, Text, TouchableOpacity, ActivityIndicator } from "react-native";
-import { themes } from "../../constants/colors";
-import { styles } from "./styles";
+import {
+  Dimensions,
+  View,
+  Text,
+  TouchableOpacity,
+  ActivityIndicator,
+} from "react-native";
 const { width } = Dimensions.get("window");
-import FilteredComponentLayout from "./filteredComponentLayout";
 import { TextInput } from "react-native-gesture-handler";
 import { startQuiz } from "../../api";
 
-const ModalContent = ({token, navigation}) => {
-  const [name, setName] = useState('');
-  const [desc, setDesc] = useState('');
-  const [text, setText] = useState('');
+const ModalContent = ({ token, navigation, SetVisible }) => {
+  const [name, setName] = useState("");
+  const [desc, setDesc] = useState("");
+  const [text, setText] = useState("");
   const [loading, setLoading] = useState(false);
-  if(!loading)
+  if (!loading)
+    return (
+      <View style={{}}>
+        <View style={{ alignSelf: "center", marginTop: 10 }}>
+          <Text style={{ fontSize: 28 }}>Create Quiz</Text>
+        </View>
+        <View style={{ width: "100%" }}>
+          <Text style={{ fontSize: 18, marginLeft: "5%" }}>Name</Text>
+          <TextInput
+            style={{
+              width: "90%",
+              borderBottomWidth: 2,
+              borderColor: "blue",
+              alignSelf: "center",
+            }}
+            onChangeText={(t) => setName(t)}
+            placeholder="Enter Name of the Quiz"
+          />
+          <View style={{ height: "10%" }} />
+          <Text style={{ fontSize: 18, marginLeft: "5%" }}>Description</Text>
+          <TextInput
+            style={{
+              width: "90%",
+              borderBottomWidth: 2,
+              borderColor: "blue",
+              alignSelf: "center",
+            }}
+            onChangeText={(t) => setDesc(t)}
+            placeholder="Enter Description for the quiz"
+          />
+          <View style={{ height: "10%" }} />
+          <Text style={{ fontSize: 18, marginLeft: "5%" }}>Text</Text>
+          <TextInput
+            style={{
+              width: "90%",
+              borderBottomWidth: 2,
+              borderColor: "blue",
+              alignSelf: "center",
+              height: 100,
+            }}
+            onChangeText={(t) => setText(t)}
+            placeholder="Enter the content for quiz"
+            multiline
+          />
+          <View style={{ height: "10%" }} />
+          <TouchableOpacity
+            style={{
+              width: 0.5 * width,
+              alignItems: "center",
+              borderRadius: 10,
+              borderWidth: 0.2,
+              borderColor: "#e5e5e5",
+              padding: 10,
+              elevation: 2,
+              backgroundColor: "rgba(91, 102, 255, 0.8)",
+              alignSelf: "center",
+            }}
+            onPress={async () => {
+              let obj = {
+                name,
+                desc,
+                text: text
+                  ? text
+                  : "London Wildlife Trust, founded in 1981, is the local nature conservation charity for Greater London. It is one of 46 members of the Royal Society of Wildlife Trusts (known as The Wildlife Trusts), each of which is a local nature-conservation charity for its area. The trust aims to protect London's wildlife and wild spaces, and it manages over 40 nature reserves in Greater London. The trust's oldest reserves include Sydenham Hill Wood (pictured), which was managed by Southwark Wildlife Group before 1982 and was thus already a trust reserve at that date. The campaign to save Gunnersbury Triangle began that same year, succeeding in 1983 when a public inquiry ruled that the site could not be developed because of its value for nature. The trust has some 50 members of staff and 500 volunteers who work together on activities such as water management, chalk grassland restoration, helping people with special needs, and giving children an opportunity to go pond-dipping.2",
+              };
+              setLoading(true);
+              const res = await startQuiz(obj, token);
+              if (res) {
+                //navigate to quiz
+                res.map((element) => {
+                  element["numPeopleAnsweredOption"] = [];
+                  element["questionImgUrls"] = [];
+                  element["explanationImgUrls"] = [];
+                  element["userPhotoUrls"] = [null];
+                });
+                console.log("Waiting", res);
+                SetVisible(false);
+                navigation.navigate("PlayContest", { contestQuestions: res });
+              }
+            }}
+          >
+            <Text style={{ fontSize: 18, color: "#fff" }}>Start Quiz</Text>
+          </TouchableOpacity>
+        </View>
+      </View>
+    );
   return (
-    <View style={{}}>
-      <View style={{ alignSelf: "center", marginTop: 10 }}>
-        <Text style={{ fontSize: 28 }}>Create Quiz</Text>
-      </View>
-      <View style={{ width: "100%" }}>
-        <Text style={{ fontSize: 18, marginLeft: "5%" }}>Name</Text>
-        <TextInput
-          style={{
-            width: "90%",
-            borderBottomWidth: 2,
-            borderColor: "blue",
-            alignSelf: "center",
-          }}
-          onChangeText = {(t)=>setName(t)}
-          placeholder="Enter Name of the Quiz"
-        />
-        <View style={{ height: "10%" }} />
-        <Text style={{ fontSize: 18, marginLeft: "5%" }}>Description</Text>
-        <TextInput
-          style={{
-            width: "90%",
-            borderBottomWidth: 2,
-            borderColor: "blue",
-            alignSelf: "center",
-          }}
-          onChangeText = {(t)=>setDesc(t)}
-          placeholder="Enter Description for the quiz"
-        />
-        <View style={{ height: "10%" }} />
-        <Text style={{ fontSize: 18, marginLeft: "5%" }}>Text</Text>
-        <TextInput
-          style={{
-            width: "90%",
-            borderBottomWidth: 2,
-            borderColor: "blue",
-            alignSelf: "center",
-            height: 100,
-          }}
-          onChangeText = {(t)=>setText(t)}
-          placeholder="Enter the content for quiz"
-          multiline
-        />
-        <View style={{ height: "10%" }} />
-        <TouchableOpacity
-          style={{
-            width: 0.5 * width,
-            alignItems: "center",
-            borderRadius: 10,
-            borderWidth: 0.2,
-            borderColor: "#e5e5e5",
-            padding: 10,
-            elevation: 2,
-            backgroundColor: "rgba(91, 102, 255, 0.8)",
-            alignSelf:'center'
-          }}
-          onPress={async ()=> {
-            let obj = {
-              name,
-              desc,
-              text : text ? text : "London Wildlife Trust, founded in 1981, is the local nature conservation charity for Greater London. It is one of 46 members of the Royal Society of Wildlife Trusts (known as The Wildlife Trusts), each of which is a local nature-conservation charity for its area. The trust aims to protect London's wildlife and wild spaces, and it manages over 40 nature reserves in Greater London. The trust's oldest reserves include Sydenham Hill Wood (pictured), which was managed by Southwark Wildlife Group before 1982 and was thus already a trust reserve at that date. The campaign to save Gunnersbury Triangle began that same year, succeeding in 1983 when a public inquiry ruled that the site could not be developed because of its value for nature. The trust has some 50 members of staff and 500 volunteers who work together on activities such as water management, chalk grassland restoration, helping people with special needs, and giving children an opportunity to go pond-dipping.2"
-            }
-            setLoading(true);
-            const res = await startQuiz(obj,token)
-            if(res){
-            //navigate to quiz
-            navigation.navigate('PlayContest', {contestQuestions: res})
-            }
-            console.log("Waiting", res)
-          }}
-        >
-          <Text style={{ fontSize: 18, color:'#fff' }}>Start Quiz</Text>
-        </TouchableOpacity>
-      </View>
-    </View>
-  );
-  return(
-    <View style={{flex:1, justifyContent:'center', alignItems:'center'}}>
+    <View style={{ flex: 1, justifyContent: "center", alignItems: "center" }}>
       <Text>Generating Quiz...</Text>
       <Text>Chunking Data...</Text>
-      <ActivityIndicator style={{marginTop:20}} size={50} color="rgba(91, 102, 255, 1)" 
+      <ActivityIndicator
+        style={{ marginTop: 20 }}
+        size={50}
+        color="rgba(91, 102, 255, 1)"
       />
-      <Text style={{marginTop:20}}>Please wait while we start the quiz</Text>
+      <Text style={{ marginTop: 20 }}>Please wait while we start the quiz</Text>
     </View>
-  )
+  );
 };
 
 // const ModalContent = () => {

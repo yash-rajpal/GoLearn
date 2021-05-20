@@ -80,11 +80,15 @@ const OtpVerification = ({
             : { ...styles.continue, backgroundColor: themes["light"].buttons }
         }
         onPress={async () => {
+          setRoute("null");
           const token = await tokenLogin({ email, password });
           if (token) {
             setToken(token);
             setRoute("DashBoard");
-            navigation.navigate("AppFlow", { screen : "Worksheets", params: {token:token} });
+            navigation.navigate("AppFlow", {
+              screen: "Worksheets",
+              params: { token: token },
+            });
           }
         }}
         // disabled={!(otp.length === 6)}
