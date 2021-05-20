@@ -83,7 +83,7 @@ const TabNavigator = () => {
       }}
     >
       <Tab.Screen name="Dashboard" component={Dummy} />
-      <Tab.Screen name="Worksheets" component={SearchAssignment} />
+      <Tab.Screen name="Worksheets" component={ViewAssignment} />
       <Tab.Screen name="Profile" component={Profile} />
     </Tab.Navigator>
   );
@@ -96,7 +96,7 @@ const MainAppStackNavigator = () => {
     <NavigationContainer>
       <MainAppStack.Navigator
         screenOptions={{ headerShown: false }}
-        initialRouteName="AuthFlow"
+        initialRouteName="AppFlow"
       >
         <MainAppStack.Screen name="AuthFlow" component={AuthStackNavigator} />
         <MainAppStack.Screen name="AppFlow" component={TabNavigator} />
