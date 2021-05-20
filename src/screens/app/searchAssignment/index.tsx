@@ -1,9 +1,9 @@
-import React from 'react';
-import {View, SafeAreaView, StatusBar, FlatList} from 'react-native';
-import {themes} from '../../../constants/colors';
-import {styles} from './styles';
-import SearchBar from '../../../components/searchBar';
-import CardLayout from '../../../components/cardlayout';
+import React from "react";
+import { View, SafeAreaView, StatusBar, FlatList } from "react-native";
+import { themes } from "../../../constants/colors";
+import { styles } from "./styles";
+import SearchBar from "../../../components/searchBar";
+import CardLayout from "../../../components/cardlayout";
 
 export interface Props {}
 
@@ -17,43 +17,43 @@ export interface Data {
   pdfURL: string;
 }
 
-const SearchAssignment = ({navigation}) => {
+const SearchAssignment = ({ navigation }) => {
   let dataObj: Data[] = [
     {
-      title: 'Assignment 1',
-      type: 'Addition',
+      title: "Assignment 1",
+      type: "Addition",
       noOfQuestions: 10,
-      Class: 'III',
-      Description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+      Class: "III",
+      Description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
       Rating: 4.5,
-      pdfURL: 'http://samples.leanpub.com/thereactnativebook-sample.pdf',
+      pdfURL: "http://samples.leanpub.com/thereactnativebook-sample.pdf",
     },
     {
-      title: 'Assignment 2',
-      type: 'Addition',
+      title: "Assignment 2",
+      type: "Addition",
       noOfQuestions: 10,
-      Class: 'III',
-      Description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+      Class: "III",
+      Description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
       Rating: 4.5,
-      pdfURL: 'http://samples.leanpub.com/thereactnativebook-sample.pdf',
+      pdfURL: "http://samples.leanpub.com/thereactnativebook-sample.pdf",
     },
     {
-      title: 'Assignment 3',
-      type: 'Addition',
+      title: "Assignment 3",
+      type: "Addition",
       noOfQuestions: 10,
-      Class: 'III',
-      Description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+      Class: "III",
+      Description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
       Rating: 4.5,
-      pdfURL: 'http://samples.leanpub.com/thereactnativebook-sample.pdf',
+      pdfURL: "http://samples.leanpub.com/thereactnativebook-sample.pdf",
     },
     {
-      title: 'Assignment 4',
-      type: 'Addition',
+      title: "Assignment 4",
+      type: "Addition",
       noOfQuestions: 10,
-      Class: 'III',
-      Description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+      Class: "III",
+      Description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
       Rating: 4.5,
-      pdfURL: 'http://samples.leanpub.com/thereactnativebook-sample.pdf',
+      pdfURL: "http://samples.leanpub.com/thereactnativebook-sample.pdf",
     },
   ];
 
@@ -62,7 +62,7 @@ const SearchAssignment = ({navigation}) => {
       <StatusBar
         translucent
         barStyle="dark-content"
-        backgroundColor={themes['light'].backgroundLight}
+        backgroundColor={themes["light"].backgroundLight}
       />
       <View style={styles.header}>
         <SearchBar />
@@ -72,7 +72,7 @@ const SearchAssignment = ({navigation}) => {
         contentContainerStyle={styles.body}
         keyExtractor={(item) => item.title}
         renderItem={(item) => (
-          <CardLayout datasent={item['item']} navigation={navigation} />
+          <CardLayout datasent={item["item"]} navigation={navigation} />
         )}
       />
     </SafeAreaView>
