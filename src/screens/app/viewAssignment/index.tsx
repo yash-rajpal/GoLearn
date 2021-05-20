@@ -4,6 +4,7 @@ import { fontsSize, fontFamily } from "../../../constants/fonts";
 import LayoutWithoutCarousel from "../../../components/layoutWithoutCarousel";
 import { themes } from "../../../constants/colors";
 import BottomModal from "../../../components/bottomModal";
+import { startQuiz } from "../../../api";
 
 const { width } = Dimensions.get("window");
 
@@ -46,8 +47,9 @@ const ViewAssignment = ({ navigation }) => {
               elevation: 2,
               backgroundColor: "rgba(91, 102, 255, 0.8)",
             }}
-            onPress={() => {
-              SetVisible(true);
+            onPress={async () => {
+              // SetVisible(true);
+              const quizdata = await startQuiz({}, "");
             }}
           >
             <Text

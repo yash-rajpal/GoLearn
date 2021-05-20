@@ -10,6 +10,7 @@ const url = {
   token_createUser: "/accounts/token/createuser",
   token_loginUser: "/accounts/token/login",
   student_createUser: "/student/createuser",
+  start_quiz: "/student/starttest/",
 };
 
 export const tokenCreateUser = async (obj) => {
@@ -62,6 +63,31 @@ export const studentCreateUser = async (obj, token) => {
     body: JSON.stringify(obj),
   });
   let json = await res.json();
-  console.log("token in api = ", json);
+  console.log("student created = ", json);
   return json ? true : false;
+};
+
+export const startQuiz = async (obj, token) => {
+  let result = "";
+  // token = "bb8c3b567bce1910e2b64c12352b6c2432c2ccc4";
+  const headers = {
+    "Content-Type": "multipart/form-data",
+    Authorization: `token ${token}`,
+    Accept: "*/*",
+  };
+
+  var formdata = new FormData();
+  formdata.append("name", obj.name);
+  formdata.append("desc", obj.desc);
+  formdata.append("text", obj.text);
+  formdata.append("perquestion", "30");
+  let res = await fetch(baseurl + url.start_quiz, {
+    method: "POST",
+    headers,
+    body: formdata,
+    redirect: "follow",
+  });
+  let json = await res.json();
+  console.log("quiz start response = ", json);
+  return json ? json : false;
 };
