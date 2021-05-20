@@ -7,6 +7,9 @@ import FilteredComponentLayout from "./filteredComponentLayout";
 import { TextInput } from "react-native-gesture-handler";
 
 const ModalContent = () => {
+  const [name, setName] = useState('');
+  const [desc, setDesc] = useState('');
+  const [text, setText] = useState('');
   return (
     <View style={{}}>
       <View style={{ alignSelf: "center", marginTop: 10 }}>
@@ -21,9 +24,10 @@ const ModalContent = () => {
             borderColor: "blue",
             alignSelf: "center",
           }}
+          onChangeText = {(t)=>setName(t)}
           placeholder="Enter Name of the Quiz"
         />
-        <View style={{height:'10%'}} />
+        <View style={{ height: "10%" }} />
         <Text style={{ fontSize: 18, marginLeft: "5%" }}>Description</Text>
         <TextInput
           style={{
@@ -32,8 +36,40 @@ const ModalContent = () => {
             borderColor: "blue",
             alignSelf: "center",
           }}
-          placeholder="Enter Name of the Quiz"
+          onChangeText = {(t)=>setDesc(t)}
+          placeholder="Enter Description for the quiz"
         />
+        <View style={{ height: "10%" }} />
+        <Text style={{ fontSize: 18, marginLeft: "5%" }}>Text</Text>
+        <TextInput
+          style={{
+            width: "90%",
+            borderBottomWidth: 2,
+            borderColor: "blue",
+            alignSelf: "center",
+            height: 100,
+          }}
+          onChangeText = {(t)=>setText(t)}
+          placeholder="Enter the content for quiz"
+          multiline
+        />
+        <View style={{ height: "10%" }} />
+        <TouchableOpacity
+          style={{
+            width: 0.5 * width,
+            alignItems: "center",
+            borderRadius: 10,
+            borderWidth: 0.2,
+            borderColor: "#e5e5e5",
+            padding: 10,
+            elevation: 2,
+            backgroundColor: "rgba(91, 102, 255, 0.8)",
+            alignSelf:'center'
+          }}
+          onPress={()=> console.log("Testing", name, desc, text)}
+        >
+          <Text style={{ fontSize: 18, color:'#fff' }}>Start Quiz</Text>
+        </TouchableOpacity>
       </View>
     </View>
   );
