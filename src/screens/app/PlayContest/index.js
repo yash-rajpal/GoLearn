@@ -55,16 +55,25 @@ const PlayContest = ({ navigation, route }) => {
   // const contestQuestions = [{"answer":"C","contestId":"ckn77s75703534tmp4yb9vpnj","explanation":"C","id":"ckn77skda04704tptkq3tt07v","index":1,"numPeopleAnsweredOption":[],"options":["A","B","C","D"],"questionImgUrls":[],"questionText":"The main reserves of phosphorus in the biosphere is in the\n\nA.hydrosphereB.atmosphereC.lithosphereD.troposphere","explanationImgUrls":[],"questionStatus":"new","userPhotoUrls":[null]},{"answer":"C","contestId":"ckn77s75703534tmp4yb9vpnj","explanation":"C","id":"ckn77t2vt03604tmpsq8m4w8e","index":2,"numPeopleAnsweredOption":[],"options":["A","B","C","D"],"questionImgUrls":[],"questionText":"The Loktak lake facing environmental problems is situated in\n\nA.OrissaB.AssamC.ManipurD.Kerala","explanationImgUrls":[],"questionStatus":"new","userPhotoUrls":[null]},{"answer":"C","contestId":"ckn77s75703534tmp4yb9vpnj","explanation":"C","id":"ckn77tmiy00804tr1ns4eeh26","index":3,"numPeopleAnsweredOption":[],"options":["A","B","C","D"],"questionImgUrls":[],"questionText":"The market condition when goods and services are not freely available and thus the prices are relatively high is called\n\nA.rights issueB.sinking fundC.seller's marketD.recession","explanationImgUrls":[],"questionStatus":"new","userPhotoUrls":[null]},{"answer":"A","contestId":"ckn77s75703534tmp4yb9vpnj","explanation":"A","id":"ckn77u3am03224ts2w7ydlnbb","index":4,"numPeopleAnsweredOption":[],"options":["A","B","C","D"],"questionImgUrls":[],"questionText":"The headquarter of 'Assam Rifles' at\n\nA.ShillongB.KohimaC.AizawlD.Itanagar","explanationImgUrls":[],"questionStatus":"new","userPhotoUrls":[null]},{"answer":"A","contestId":"ckn77s75703534tmp4yb9vpnj","explanation":"A","id":"ckn77uius00864tr1dtstbum3","index":5,"numPeopleAnsweredOption":[],"options":["A","B","C","D"],"questionImgUrls":[],"questionText":"The language spoken in Sikkim are\n\nA.Nepali, Hindi, Lepcha, BhutaniB.MarathiC.Bengali, TripuriD.Manipuri","explanationImgUrls":[],"questionStatus":"new","userPhotoUrls":[null]},{"answer":"B","contestId":"ckn77s75703534tmp4yb9vpnj","explanation":"B","id":"ckn77v15304844tptaflyjf8q","index":6,"numPeopleAnsweredOption":[],"options":["A","B","C","D"],"questionImgUrls":[],"questionText":"The Heads of Government of the countries which are members of the Commonwealth meet\n\nA.once a yearB.bienniallyC.at intervals of three yearsD.as and when necessary","explanationImgUrls":[],"questionStatus":"new","userPhotoUrls":[null]},{"answer":"A","contestId":"ckn77s75703534tmp4yb9vpnj","explanation":"A","id":"ckn77vg3404864tpttdiqp7me","index":7,"numPeopleAnsweredOption":[],"options":["A","B","C","D"],"questionImgUrls":[],"questionText":"The headquarter of the International court of Justice (UNO) are located at\n\nA.Hague (Netherlands)B.Addis AbabaC.BangkokD.New York, USA","explanationImgUrls":[],"questionStatus":"new","userPhotoUrls":[null]},{"answer":"C","contestId":"ckn77s75703534tmp4yb9vpnj","explanation":"C","id":"ckn77vx7c01974trsfym2sp04","index":8,"numPeopleAnsweredOption":[],"options":["A","B","C","D"],"questionImgUrls":[],"questionText":"The headquarter of all the following international organization are based at Vienna, excepted\n\nA.United Nations Industrial Development OrganizationB.Organization of Petroleum Exporting CountriesC.United Nations Development ProgrammeD.International Atomic Energy Agency","explanationImgUrls":[],"questionStatus":"new","userPhotoUrls":[null]},{"answer":"A","contestId":"ckn77s75703534tmp4yb9vpnj","explanation":"A","id":"ckn77whgx05984tqbs4j5re4v","index":9,"numPeopleAnsweredOption":[],"options":["A","B","C","D"],"questionImgUrls":[],"questionText":"The headquarter of European Court of Justice (ECJ) are situated at\n\nA.LuxembourgB.ParisC.Strasbourg (France)D.San Jose, Costa Rica","explanationImgUrls":[],"questionStatus":"new","userPhotoUrls":[null]},{"answer":"A","contestId":"ckn77s75703534tmp4yb9vpnj","explanation":"A","id":"ckn77wwle06044tqb7p090d16","index":10,"numPeopleAnsweredOption":[],"options":["A","B","C","D"],"questionImgUrls":[],"questionText":"The host of first Olympics in 1896 was\n\nA.Athens, GreeceB.Paris, FranceC.London, Great BritainD.Los Angeles, USA","explanationImgUrls":[],"questionStatus":"new","userPhotoUrls":[null]}]
   const contestQuestions = route.params.contestQuestions;
   const contest_questions = contestQuestions;
-  console.log("Play quiz questions", contest_questions);
+  // console.log("Play quiz questions", contest_questions);
   // const {showToast} = useToast();
   // const dispatch = useDispatch();
   const [animation, setAnimation] = React.useState(true);
   const [questionIndex, setQuestionIndex] = React.useState(0);
   const [expandImage, setExpandImage] = React.useState();
   const [modalVisible, setModalVisible] = React.useState(false);
+  const totalCorrect = React.useRef(0);
+  const totalInCorrect = React.useRef(0);
   // const {contestId, timer} = navigation.state.params;
   const timer = 30;
   const [loading, setLoading] = React.useState(true);
+
+  setTotalCorrect = () =>{
+    totalCorrect.current = totalCorrect.current + 1;
+  }
+  setTotalInCorrect = () => {
+    totalInCorrect.current = totalInCorrect.current + 1;
+  }
 
   React.useEffect(() => {
     setLoading(false);
@@ -116,6 +125,7 @@ const PlayContest = ({ navigation, route }) => {
       // });
       setLoading(true);
     }
+    console.log("STATUS " , totalCorrect, totalInCorrect);
   };
   /**
    * Navigate Home
@@ -219,6 +229,10 @@ const PlayContest = ({ navigation, route }) => {
               renderNext={_renderNextQuestion}
               expandImage={(img) => setExpandImage(img)}
               qTimer={timer}
+              totalCorrect
+              setTotalCorrect = {setTotalCorrect}
+              totalInCorrect
+              setTotalInCorrect = {setTotalInCorrect}
             />
           ) : null;
         })

@@ -153,24 +153,24 @@ const PlayContestHeader = (props) => {
         setStopQuestTimer(true);
         // showLoading(true);
         let ansIndex = data.options.indexOf(data.answer);
-        console.log(ansIndex);
+        // console.log(ansIndex);
         const newAnsOptions = ansOptions.map((item, i) => ({
             ...item,
             ans: i === index ? ansOptions[i].name === data.answer ? item.ans = 'correct' : 'wrong' : i === ansIndex ? item.ans = 'correct' : item.ans = '',
         }));
-        console.log(newAnsOptions);
+        // console.log(newAnsOptions);
         setAnsOptions(newAnsOptions);
         if (ansOptions[index].name === data.answer) {
-            console.log(newAnsOptions.filter(item => item.ans === 'correct'));
+            // console.log(newAnsOptions.filter(item => item.ans === 'correct'));
             setSolutionOptions(newAnsOptions.filter(item => item.ans === 'correct'));
             if (data.numPeopleAnsweredOption.length) {
                 let numPeopleAnswered = data.numPeopleAnsweredOption.reduce((a, b) => {
                     return a + b;
                 }, 0);
-                console.log('Play_numPeopleAnsweredOption', data.numPeopleAnsweredOption);
-                console.log('Play_contest_numPeopleAnswered', numPeopleAnswered);
+                // console.log('Play_numPeopleAnsweredOption', data.numPeopleAnsweredOption);
+                // console.log('Play_contest_numPeopleAnswered', numPeopleAnswered);
                 const corrAnsOption = Math.ceil((100 * parseInt(data.numPeopleAnsweredOption[ansIndex])) / parseInt(numPeopleAnswered));
-                console.log('Play_contest_correctOption', corrAnsOption);
+                // console.log('Play_contest_correctOption', corrAnsOption);
                 if (numPeopleAnswered > 0) {
                     setAnsPercent({correctPercent: corrAnsOption});
                 } else {
@@ -179,19 +179,22 @@ const PlayContestHeader = (props) => {
             }
             setIsCorrect(true);
             setShowSolution(true);
+            //
+            props.setTotalCorrect(Number(props.totalCorrect)+1);
+            console.log("Correct Set", Number(props.totalCorrect))
         } else {
-            console.log(newAnsOptions.filter(item => item.ans === 'correct' || item.ans === 'wrong'));
+            // console.log(newAnsOptions.filter(item => item.ans === 'correct' || item.ans === 'wrong'));
             setSolutionOptions(newAnsOptions.filter(item => item.ans === 'correct' || item.ans === 'wrong'));
             if (data.numPeopleAnsweredOption.length) {
                 let numPeopleAnswered = data.numPeopleAnsweredOption.reduce((a, b) => {
                     return a + b;
                 }, 0);
-                console.log('Play_numPeopleAnsweredOption', data.numPeopleAnsweredOption);
-                console.log('Play_contest_numPeopleAnswered', numPeopleAnswered);
+                // console.log('Play_numPeopleAnsweredOption', data.numPeopleAnsweredOption);
+                // console.log('Play_contest_numPeopleAnswered', numPeopleAnswered);
                 const corrAnsOption = Math.ceil((100 * parseInt(data.numPeopleAnsweredOption[ansIndex])) / parseInt(numPeopleAnswered));
                 const wrnAnsOption = Math.ceil((100 * parseInt(data.numPeopleAnsweredOption[index])) / parseInt(numPeopleAnswered));
-                console.log('Play_contest_corrAnsOption', corrAnsOption);
-                console.log('Play_contest_wrnAnsOption', wrnAnsOption);
+                // console.log('Play_contest_corrAnsOption', corrAnsOption);
+                // console.log('Play_contest_wrnAnsOption', wrnAnsOption);
                 if (numPeopleAnswered > 0) {
                     setAnsPercent({
                         wrongPercent: wrnAnsOption,
@@ -206,6 +209,9 @@ const PlayContestHeader = (props) => {
             }
             setIsCorrect(false);
             setShowSolution(true);
+            //
+            props.setTotalInCorrect(Number(props.totalInCorrect) + 1);
+            console.log("Incorret set", Number(props.totalInCorrect))
         }
     };
     /**
@@ -233,7 +239,7 @@ const PlayContestHeader = (props) => {
      * Report Question
      */
     const _report = () => {
-        console.log('report');
+        // console.log('report');
     };
     // console.log(solutionOptions);
     return (
