@@ -128,7 +128,7 @@ const PlayContest = ({ navigation, route }) => {
         "Quiz Score",
         "The Score is " + totalCorrect.current + " correct answers and " +totalInCorrect.current + " incorrect answers." + '\n' + "Accuracy = " + (totalCorrect.current / (totalCorrect.current + totalInCorrect.current)).toFixed(2),
         [
-          { text: "OK", onPress: () => console.log("OK Pressed") }
+          { text: "OK", onPress: () => navigation.navigate("Dashboard") }
         ]
       );
       setLoading(true);
