@@ -8,6 +8,7 @@ import {
   Text,
   BackHandler,
   ActivityIndicator,
+  Alert
 } from "react-native";
 
 //Libraries
@@ -123,6 +124,13 @@ const PlayContest = ({ navigation, route }) => {
       // navigation.navigate('ContestFeedback', {
       //     contestId: contestId,
       // });
+      Alert.alert(
+        "Quiz Score",
+        "The Score is " + totalCorrect.current + " correct answers and " +totalInCorrect.current + " incorrect answers." + '\n' + "Accuracy = " + (totalCorrect.current / (totalCorrect.current + totalInCorrect.current)).toFixed(2),
+        [
+          { text: "OK", onPress: () => console.log("OK Pressed") }
+        ]
+      );
       setLoading(true);
     }
     console.log("STATUS " , totalCorrect, totalInCorrect);
