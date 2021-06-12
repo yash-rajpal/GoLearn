@@ -1,5 +1,12 @@
 import React, { useEffect, useState } from "react";
-import { View, TouchableOpacity, Image, Dimensions, Text } from "react-native";
+import {
+  View,
+  TouchableOpacity,
+  Image,
+  Dimensions,
+  Text,
+  ActivityIndicator,
+} from "react-native";
 import ImagePicker, { ImageOrVideo } from "react-native-image-crop-picker";
 import { themes } from "../../constants/colors";
 import { fontsSize } from "../../constants/fonts";
@@ -17,6 +24,7 @@ const Camera = ({ navigation, route }) => {
   const [path, setPath] = useState<string>();
   const [retake, setRetake] = useState<boolean>(false);
   const [ratio, setRatio] = useState<number>(1);
+  const [quizLoading, setQuizLoading] = useState("");
 
   const imagePickerConfig = {
     width: 550,
@@ -37,6 +45,7 @@ const Camera = ({ navigation, route }) => {
 
   const callApi = (image) => {
     console.log(image);
+    setQuizLoading("start");
     var myHeaders = new Headers();
     myHeaders.append(
       "Authorization",
@@ -77,7 +86,10 @@ const Camera = ({ navigation, route }) => {
         console.log("Waiting", result);
         navigation.navigate("PlayContest", { contestQuestions: result });
       })
-      .catch((error) => console.log("error", error));
+      .catch((error) => {
+        console.log("error", error);
+        setQuizLoading("error");
+      });
   };
 
   const openCamera = () => {
@@ -128,26 +140,32 @@ const Camera = ({ navigation, route }) => {
 
   if (path?.length === 0) {
     return null;
-  }
-  return (
-    <View
-      style={{
-        flex: 1,
-        marginTop: "5%",
-        height: HEIGHT,
-      }}
-    >
-      <View>
-        <Image
-          source={{ uri: path }}
-          style={{
-            height: ratio * WIDTH,
-            width: WIDTH,
-          }}
+  } else if (quizLoading === "start")
+    return (
+      <View style={{ flex: 1, justifyContent: "center", alignItems: "center" }}>
+        <Text>Generating Quiz...</Text>
+        <Text>Chunking Data...Understanding your bit...</Text>
+        <ActivityIndicator
+          style={{ marginTop: 20 }}
+          size={50}
+          color="rgba(91, 102, 255, 1)"
         />
+        <Text style={{ marginTop: 20 }}>
+          Please wait while we start the quiz
+        </Text>
       </View>
-    </View>
-  );
+    );
+  else if (quizLoading === "error")
+    return (
+      <View style={{ flex: 1, justifyContent: "center", alignItems: "center" }}>
+        <Text>Error While Chunking. </Text>
+        <Text>Give me a click I can Understand</Text>
+        <TouchableOpacity onPress={() => navigation.navigate("Dashboard")}>
+          <Text style={{ marginTop: 20 }}>Try Again </Text>
+        </TouchableOpacity>
+      </View>
+    );
+  else return null;
 };
 
 export default Camera;

@@ -8,7 +8,7 @@ import {
   Text,
   BackHandler,
   ActivityIndicator,
-  Alert
+  Alert,
 } from "react-native";
 
 //Libraries
@@ -69,12 +69,12 @@ const PlayContest = ({ navigation, route }) => {
   const timer = 30;
   const [loading, setLoading] = React.useState(true);
 
-  setTotalCorrect = () =>{
+  setTotalCorrect = () => {
     totalCorrect.current = totalCorrect.current + 1;
-  }
+  };
   setTotalInCorrect = () => {
     totalInCorrect.current = totalInCorrect.current + 1;
-  }
+  };
 
   React.useEffect(() => {
     setLoading(false);
@@ -126,14 +126,22 @@ const PlayContest = ({ navigation, route }) => {
       // });
       Alert.alert(
         "Quiz Score",
-        "The Score is " + totalCorrect.current + " correct answers and " +totalInCorrect.current + " incorrect answers." + '\n' + "Accuracy = " + (totalCorrect.current / (totalCorrect.current + totalInCorrect.current)).toFixed(2),
-        [
-          { text: "OK", onPress: () => navigation.navigate("Dashboard") }
-        ]
+        "The Score is " +
+          totalCorrect.current +
+          " correct answers and " +
+          totalInCorrect.current +
+          " incorrect answers." +
+          "\n" +
+          "Accuracy = " +
+          (
+            totalCorrect.current /
+            (totalCorrect.current + totalInCorrect.current)
+          ).toFixed(2),
+        [{ text: "OK", onPress: () => navigation.navigate("Dashboard") }]
       );
       setLoading(true);
     }
-    console.log("STATUS " , totalCorrect, totalInCorrect);
+    console.log("STATUS ", totalCorrect, totalInCorrect);
   };
   /**
    * Navigate Home
@@ -238,9 +246,9 @@ const PlayContest = ({ navigation, route }) => {
               expandImage={(img) => setExpandImage(img)}
               qTimer={timer}
               totalCorrect
-              setTotalCorrect = {setTotalCorrect}
+              setTotalCorrect={setTotalCorrect}
               totalInCorrect
-              setTotalInCorrect = {setTotalInCorrect}
+              setTotalInCorrect={setTotalInCorrect}
             />
           ) : null;
         })
@@ -248,7 +256,10 @@ const PlayContest = ({ navigation, route }) => {
         <View style={styles.center}>
           <Text style={styles.heading}>Oops no contest data found</Text>
           <TouchableOpacity
-            onPress={() => console.log("Go Home")}
+            onPress={() => {
+              console.log("Go Home");
+              navigation.navigate("Dashboard");
+            }}
             style={styles.backBtn}
           >
             <Text style={styles.btnTxt}>Go To Home</Text>
