@@ -48,7 +48,12 @@ const Camera = ({ navigation }) => {
     formdata.append("name", "kush bhi11");
     formdata.append("desc", "kafi hai11");
     formdata.append("perquestion", "30");
-    formdata.append("img", image.data, image.path);
+    // formdata.append("img", image.data, image.path);
+    formdata.append("img", {
+      uri: image.path,
+      name: "image.jpg",
+      type: image.mime,
+    });
 
     var requestOptions = {
       method: "POST",
@@ -57,7 +62,7 @@ const Camera = ({ navigation }) => {
       redirect: "follow",
     };
 
-    fetch("http://127.0.0.1:8000/student/starttest/", requestOptions)
+    fetch("https://a82ef1a38e5e.ngrok.io/student/starttest/", requestOptions)
       .then((response) => response.json())
       .then((result) => {
         result.map((element) => {
@@ -73,8 +78,22 @@ const Camera = ({ navigation }) => {
   };
 
   useEffect(() => {
-    ImagePicker.openCamera(imagePickerConfig)
+    // ImagePicker.openCamera(imagePickerConfig)
+    //   .then((image) => {
+    //     setImg(image);
+    //     setPath(image.path);
+    //     setRatio(image.height / image.width);
+    //     setBase64(image.data);
+    //     callApi(image);
+    //   })
+    //   .catch((e) => {
+    //     console.log("e = ", e);
+    //     navigation.goBack();
+    //   });
+
+    ImagePicker.openPicker(imagePickerConfig)
       .then((image) => {
+        // console.log(image);
         setImg(image);
         setPath(image.path);
         setRatio(image.height / image.width);
