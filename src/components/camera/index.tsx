@@ -31,6 +31,47 @@ const Camera = ({ navigation }) => {
     compressImageQuality: 1,
     cropperStatusBarColor: themes["light"].backgroundDark,
   };
+
+  const callApi = (image) => {
+    console.log(image);
+    var myHeaders = new Headers();
+    myHeaders.append(
+      "Authorization",
+      "token cecb2a988c62eabba92b553e9d674ead46434e5f"
+    );
+    myHeaders.append(
+      "Cookie",
+      "csrftoken=CrtR6SZKsLpJyavNGPI8ILqofvpEwZ8AaZkOOPyxYNUTXr2M6QMi4quoRgDL5ic5; Cookie_1=value"
+    );
+
+    var formdata = new FormData();
+    formdata.append("name", "kush bhi11");
+    formdata.append("desc", "kafi hai11");
+    formdata.append("perquestion", "30");
+    formdata.append("img", image.data, image.path);
+
+    var requestOptions = {
+      method: "POST",
+      headers: myHeaders,
+      body: formdata,
+      redirect: "follow",
+    };
+
+    fetch("http://127.0.0.1:8000/student/starttest/", requestOptions)
+      .then((response) => response.json())
+      .then((result) => {
+        result.map((element) => {
+          element["numPeopleAnsweredOption"] = [];
+          element["questionImgUrls"] = [];
+          element["explanationImgUrls"] = [];
+          element["userPhotoUrls"] = [null];
+        });
+        console.log("Waiting", result);
+        navigation.navigate("PlayContest", { contestQuestions: result });
+      })
+      .catch((error) => console.log("error", error));
+  };
+
   useEffect(() => {
     ImagePicker.openCamera(imagePickerConfig)
       .then((image) => {
@@ -38,6 +79,7 @@ const Camera = ({ navigation }) => {
         setPath(image.path);
         setRatio(image.height / image.width);
         setBase64(image.data);
+        callApi(image);
       })
       .catch((e) => {
         console.log("e = ", e);
