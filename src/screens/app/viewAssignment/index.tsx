@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Text, View, Dimensions, TouchableOpacity } from "react-native";
+import { Text, View, Dimensions, TouchableOpacity, Alert } from "react-native";
 import { fontsSize, fontFamily } from "../../../constants/fonts";
 import LayoutWithoutCarousel from "../../../components/layoutWithoutCarousel";
 import { themes } from "../../../constants/colors";
@@ -9,7 +9,20 @@ import { startQuiz } from "../../../api";
 const { width } = Dimensions.get("window");
 
 const ViewAssignment = ({ navigation, route }) => {
-  console.log("route", route.params.token)
+  const selectAndNavigate = () => {
+    Alert.alert("Choose/Capture", "Select one option to proceed", [
+      {
+        text: "Camera",
+        onPress: () => navigation.navigate("Camera", { isCamera: true }),
+      },
+      {
+        text: "Gallery",
+        onPress: () => navigation.navigate("Camera", { isCamera: false }),
+      },
+    ]);
+  };
+
+  console.log("route", route.params.token);
   const [visible, SetVisible] = useState<boolean>(false);
   return (
     <LayoutWithoutCarousel imgsrc={0} navigation={navigation}>
@@ -64,7 +77,9 @@ const ViewAssignment = ({ navigation, route }) => {
             </Text>
           </TouchableOpacity>
           <TouchableOpacity
-            onPress={() => navigation.navigate("Camera")}
+            onPress={() => {
+              selectAndNavigate();
+            }}
             style={{
               width: 0.5 * width,
               alignItems: "center",
@@ -88,7 +103,12 @@ const ViewAssignment = ({ navigation, route }) => {
             </Text>
           </TouchableOpacity>
         </View>
-        <BottomModal visible={visible} SetVisible={SetVisible} token={route.params.token} navigation={navigation}/>
+        <BottomModal
+          visible={visible}
+          SetVisible={SetVisible}
+          token={route.params.token}
+          navigation={navigation}
+        />
       </View>
     </LayoutWithoutCarousel>
   );

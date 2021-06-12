@@ -7,8 +7,11 @@ import { styles } from "./styles";
 
 const { width: WIDTH, height: HEIGHT } = Dimensions.get("window");
 
-const Camera = ({ navigation }) => {
+const Camera = ({ navigation, route }) => {
   // eslint-disable no-unused-vars
+
+  const isCamera = route.params.isCamera;
+
   const [img, setImg] = useState<ImageOrVideo>();
   const [base64, setBase64] = useState<string>("");
   const [path, setPath] = useState<string>();
@@ -77,20 +80,22 @@ const Camera = ({ navigation }) => {
       .catch((error) => console.log("error", error));
   };
 
-  useEffect(() => {
-    // ImagePicker.openCamera(imagePickerConfig)
-    //   .then((image) => {
-    //     setImg(image);
-    //     setPath(image.path);
-    //     setRatio(image.height / image.width);
-    //     setBase64(image.data);
-    //     callApi(image);
-    //   })
-    //   .catch((e) => {
-    //     console.log("e = ", e);
-    //     navigation.goBack();
-    //   });
+  const openCamera = () => {
+    ImagePicker.openCamera(imagePickerConfig)
+      .then((image) => {
+        setImg(image);
+        setPath(image.path);
+        setRatio(image.height / image.width);
+        setBase64(image.data);
+        callApi(image);
+      })
+      .catch((e) => {
+        console.log("e = ", e);
+        navigation.goBack();
+      });
+  };
 
+  const openPicker = () => {
     ImagePicker.openPicker(imagePickerConfig)
       .then((image) => {
         // console.log(image);
@@ -104,8 +109,23 @@ const Camera = ({ navigation }) => {
         console.log("e = ", e);
         navigation.goBack();
       });
+  };
+
+  useEffect(() => {
+    console.log("isCamera = ", isCamera);
+
+    if (isCamera) {
+      console.log("in if ");
+
+      openCamera();
+    } else {
+      console.log("in else");
+
+      openPicker();
+    }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [retake]);
+
   if (path?.length === 0) {
     return null;
   }
