@@ -13,6 +13,7 @@ import {
 
 //Libraries
 import Icon from 'react-native-vector-icons/Ionicons';
+import Tts from 'react-native-tts';
 // import {useDispatch, useSelector, useStore} from 'react-redux';
 
 //Theme
@@ -75,6 +76,11 @@ const PlayContestHeader = (props) => {
     /*--------- End// Commented due time not enough to evaluate solution -------*/
     const [toggleQuestion, setToggleQuestion] = React.useState(false);
     // const [toggleQuestion, setToggleQuestion] = React.useState(false);
+
+    React.useEffect(()=>{
+        Tts.speak(data.questionText);
+
+    }, []);
 
 
     React.useEffect(() => {
@@ -182,6 +188,7 @@ const PlayContestHeader = (props) => {
             //
             props.setTotalCorrect(Number(props.totalCorrect)+1);
             console.log("Correct Set", Number(props.totalCorrect))
+            Tts.speak('Correct Answer!')
         } else {
             // console.log(newAnsOptions.filter(item => item.ans === 'correct' || item.ans === 'wrong'));
             setSolutionOptions(newAnsOptions.filter(item => item.ans === 'correct' || item.ans === 'wrong'));
@@ -212,6 +219,7 @@ const PlayContestHeader = (props) => {
             //
             props.setTotalInCorrect(Number(props.totalInCorrect) + 1);
             console.log("Incorret set", Number(props.totalInCorrect))
+            Tts.speak('Sorry, Incorrect answer!')
         }
     };
     /**
